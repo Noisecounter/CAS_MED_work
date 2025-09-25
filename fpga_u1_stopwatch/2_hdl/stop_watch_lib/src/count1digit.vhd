@@ -10,7 +10,7 @@ entity count1digit is
         run             : in  std_ulogic;                       -- 1: Increment counter, 0: Keep current counter value
         lap             : in  std_ulogic;                       -- 1: Freeze output, 0: Output counter value
         init            : in  std_ulogic;                       -- 1: Reset counter to zero
-        sec_digit       : out std_ulogic_vector (6 downto 0)   -- 7-segment control value output
+        sec_digit       : out std_ulogic_vector (6 downto 0)    -- 7-segment control value output
 --        led0            : out std_ulogic
         );
 end count1digit;
@@ -19,7 +19,7 @@ end count1digit;
 architecture rtl of count1digit is
 
     signal lapdisplay   : integer range 0 to 9;                 -- Holds lap time
-    signal counter      : integer range 0 to 9;                 -- Counts enable pulses (p1hz)
+    signal counter      : integer range 0 to 9;                 -- Counts the enable pulses (p1hz)
 
     CONSTANT C_0: std_ulogic_vector (6 downto 0) := "0111111";  -- Display 0 "gfedcba"
     CONSTANT C_1: std_ulogic_vector (6 downto 0) := "0000110";  -- Display 1 "gfedcba"
@@ -34,6 +34,12 @@ architecture rtl of count1digit is
 
 begin
 
+    -----------------------------------------------------
+    -- Process sensitiv to clk
+    -- Counts the enable pulses (p1hz) if run = 1
+    -- If counter is equal to 9, then go back to 0
+    -- If init = 1, then go back to 0
+    -----------------------------------------------------
     p_CountSeconds : process (clk)
     begin
     
@@ -54,17 +60,20 @@ begin
         end if;
         
     end process p_CountSeconds; 
-        
+    
+    -----------------------------------------------------
+    -- Process sensitiv to clk
+    -- If lap is 0, then counter is displayed   
+    -----------------------------------------------------
     p_LapDisplay : process (clk)
     begin
                        
         if rising_edge (clk) then
             if lap = '0' then
---                led0 <= '1';
                 lapdisplay  <= counter;
             end if;
-         --   if reset_n = '0' or init = '1' then
-         --   end if;
+         --     else lapdisplay <= lapdisplay; -- unnötig,
+         --     VHDL erzeugt Flip-Flop das den Wert so lange speichert, bis er überschrieben wird.
         end if;
         
     end process p_LapDisplay;
