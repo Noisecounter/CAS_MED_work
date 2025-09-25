@@ -7,7 +7,7 @@
 -- Company : Institute of Microelectronics (IME) FHNW
 -- Copyright(C) IME
 -----------------------------------------------------
--- Last commit:
+-- Last commit: Michael Rast
 --   $Author::                                      $
 --      $Rev::                                      $
 --     $Date::             $
