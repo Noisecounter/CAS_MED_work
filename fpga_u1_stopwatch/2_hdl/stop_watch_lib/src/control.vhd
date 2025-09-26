@@ -32,10 +32,7 @@ begin
     begin
         if rising_edge (clk) then
             
-           if reset_n = '0' then                                        -- Reset handling of reset_n
-                current_state   <= stopped_s;
-                init            <= '1';
-           end if;
+ 
             
             if start_stop_p = '1' then                                  -- If start_stop btn pressed
                 case current_state is
@@ -75,6 +72,11 @@ begin
                 if (current_state = stopped_s) and (lap_init_p = '1') then  -- Set init to 1 if in stopped state and lap_init is pressed
                     init <= '1';
             end if;
+
+          if reset_n = '0' then                                        -- Reset handling of reset_n
+                current_state   <= stopped_s;
+                init            <= '1';
+           end if;            
         end if;
 
     end process sequential;
