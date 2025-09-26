@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
-| Date         : Fri Sep 26 11:40:10 2025
+| Date         : Fri Sep 26 15:04:38 2025
 | Host         : mike-NH5xAx running 64-bit Ubuntu 24.04.2 LTS
 | Command      : report_drc -file stop_watch_drc_opted.rpt -pb stop_watch_drc_opted.pb -rpx stop_watch_drc_opted.rpx
 | Design       : stop_watch

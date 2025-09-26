@@ -32,75 +32,46 @@ begin
     begin
         if rising_edge (clk) then
             
-            if start_stop_p = '1' then                                  -- If start_stop btn pressed
-                case current_state is
-                    when stopped_s  => current_state    <= run_s;       -- In stoped, current_state gets run_s
-                        if current_state = run_s then
-                            run     <= '1';
-                            lap     <= '0';
-                            init    <= '0';
-                        end if;
-                            
-                    when run_s      => current_state    <= stopped_s;   -- In run, current_state gets stopped_s
-                        if current_state = stopped_s then
-                            run     <= '0';
-                            lap     <= '0';
-                            init    <= '0';
-                        end if;
-                       
-                    when lap_s      => current_state    <= stopped_s;   -- In lap, current_state gets stopped_s
-                        if current_state = stopped_s then
-                            run     <= '0';
-                            lap     <= '0';
-                            init    <= '0';  
-                        end if;
-                                                
-                end case;
-            end if;
-            
-            if lap_init_p = '1' then                                    -- If lap_init is pressed
-                case current_state is
-                    when stopped_s  => current_state    <= stopped_s;   -- In stoped, current_state gets stopped_s    
-                    when run_s      => current_state    <= lap_s;       -- In run, current_state gets lap_s 
-                    when lap_s      => current_state    <= run_s;       -- In lap, current_state gets run_s 
-                end case;
-            
-            
-            
-            
-            
-            
-            
-            else
-            
-                if current_state = stopped_s then                       -- Output of Statemachine in stopped
-                    run     <= '0';
-                    lap     <= '0';
-                    init    <= '0';
-                end if;
-                
-                if current_state = run_s then                           -- Output of Statemachine in run
-                    run     <= '1';
-                    lap     <= '0';
-                    init    <= '0';
-                end if;
-                
-                if current_state = lap_s then                           --  Output of Statemachine in lap
-                    run     <= '1';
-                    lap     <= '1';
-                    init    <= '0';
-                end if;
-            end if; 
-                if (current_state = stopped_s) and (lap_init_p = '1') then  -- Set init to 1 if in stopped state and lap_init is pressed
-                    init <= '1';
-            end if;
-
-          if reset_n = '0' then                                        -- Reset handling of reset_n
-                current_state   <= stopped_s;
-                init            <= '1';
-           end if;            
-        end if;
-
+            case current_state is
+                when stopped_s  =>  run     <= '0';
+                                    init    <= '0';
+                                    lap     <= '0';
+                                    
+                                    if start_stop_p = '1' then
+                                        current_state  <= run_s;
+                                    elsif lap_init_p = '1' then 
+                                        init <= '1';
+                                    end if;
+                                    
+                when run_s      =>  run     <= '1';
+                                    init    <= '0';
+                                    lap     <= '0';
+                                    
+                                    if start_stop_p = '1' then
+                                        current_state  <= stopped_s;
+                                    elsif lap_init_p = '1' then 
+                                        current_state <= lap_s;
+                                    end if;
+                                    
+                when lap_s     =>   run     <= '1';
+                                    init    <= '0';
+                                    lap     <= '1';
+                                    
+                                    if lap_init_p = '1' then
+                                        current_state <= run_s;
+                                    elsif start_stop_p = '1' then
+                                        current_state <= stopped_s;
+                                    end if;
+                                when others => null;
+                            end case;
+                                            
+                                if reset_n = '0' then
+                                    current_state <= stopped_s;
+                                    init <= '1';
+                                end if;
+                            end if;
+                                
+  
     end process sequential;
     
 led0 <= init;
