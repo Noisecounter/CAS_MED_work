@@ -32,13 +32,29 @@ begin
     begin
         if rising_edge (clk) then
             
- 
-            
             if start_stop_p = '1' then                                  -- If start_stop btn pressed
                 case current_state is
-                    when stopped_s  => current_state    <= run_s;       -- In stoped, current_state gets run_s 
+                    when stopped_s  => current_state    <= run_s;       -- In stoped, current_state gets run_s
+                        if current_state = run_s then
+                            run     <= '1';
+                            lap     <= '0';
+                            init    <= '0';
+                        end if;
+                            
                     when run_s      => current_state    <= stopped_s;   -- In run, current_state gets stopped_s
+                        if current_state = stopped_s then
+                            run     <= '0';
+                            lap     <= '0';
+                            init    <= '0';
+                        end if;
+                       
                     when lap_s      => current_state    <= stopped_s;   -- In lap, current_state gets stopped_s
+                        if current_state = stopped_s then
+                            run     <= '0';
+                            lap     <= '0';
+                            init    <= '0';  
+                        end if;
+                                                
                 end case;
             end if;
             
@@ -48,6 +64,12 @@ begin
                     when run_s      => current_state    <= lap_s;       -- In run, current_state gets lap_s 
                     when lap_s      => current_state    <= run_s;       -- In lap, current_state gets run_s 
                 end case;
+            
+            
+            
+            
+            
+            
             
             else
             
