@@ -1,0 +1,41 @@
+# Ignore build output directory
+/build
+/export
+
+# Ignore object files and dependent files
+# .o
+# .d
+
+#Ignore logs folder and log files
+/logs
+.log
+
+#Ignore lock files
+.lock
+
+.bin
+.pdi
+.vitisWorkspace.json
+
+_ide/logs
+_ide/.wsdata
+
+# Vivado build directories
+*.runs/
+*.sim/
+*.cache/
+# *.hw/
+# *.ip_user_files/
+# *.data/
+# *.srcs/
+# *.Xil/
+
+# Common output files
+*.jou
+*.log
+*.rpt
+*.str
+
+# Sonstige Dateien und Ordner
+ATT00001.pdf
+Projekte/Hilbert_242
