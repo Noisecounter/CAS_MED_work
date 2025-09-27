@@ -33,6 +33,9 @@ begin
         if rising_edge (clk) then
             
             case current_state is
+                -- When in stopped state, set run, init and lap to 0
+                -- If start_stop is pressed, set the value of current_state to run_s.
+                -- If lap_init is pressed, set init to 1 (resets the counter in count1digit)
                 when stopped_s  =>  run     <= '0';
                                     init    <= '0';
                                     lap     <= '0';
@@ -42,7 +45,10 @@ begin
                                     elsif lap_init_p = '1' then 
                                         init <= '1';
                                     end if;
-                                    
+                
+                -- When in run state, set run to 1 and init, lap to 0
+                -- If start_stop is pressed, set the value of current_state to stopped_s.
+                -- If lap_init is pressed, set the value of current_state to lap_s.                                    
                 when run_s      =>  run     <= '1';
                                     init    <= '0';
                                     lap     <= '0';
@@ -52,7 +58,10 @@ begin
                                     elsif lap_init_p = '1' then 
                                         current_state <= lap_s;
                                     end if;
-                                    
+                
+                -- When in lap state, set run, lap to 1 and init to 0.
+                -- If lap_init is pressed, set the value of current_state to run_s. 
+                -- If start_stop is pressed, set the value of current_state to stopped_s.                                    
                 when lap_s     =>   run     <= '1';
                                     init    <= '0';
                                     lap     <= '1';
