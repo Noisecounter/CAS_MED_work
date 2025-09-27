@@ -11,7 +11,6 @@ entity prescaler is
         reset_n : in std_ulogic;
         p1hz    : out std_ulogic;
         p1khz   : out std_ulogic
---        led0            : out std_ulogic
     );
 end prescaler;
 
@@ -67,7 +66,5 @@ begin
             end if;
         end if;
     end process;
-    
--- led0 <= reset_n;
 
 end architecture rtl;

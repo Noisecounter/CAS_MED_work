@@ -1,92 +1,105 @@
------------------------------------------------------
--- Copyright (c) FHNW 2021
------------------------------------------------------
-library ieee;
-    use ieee.std_logic_1164.all;
-    use ieee.numeric_std.all;
+LIBRARY ieee;
+    USE ieee.std_logic_1164.ALL;
+    USE ieee.numeric_std.ALL;
 
 entity count1digit is
-    port (
-        reset_n : in  std_ulogic;
-        clk     : in  std_ulogic;
-        run     : in  std_ulogic;
-        enable  : in  std_ulogic;
-        lap     : in  std_ulogic;
-        init    : in  std_ulogic;
-        digit   : out std_ulogic_vector(6 downto 0)
+    generic(
+        g_high : integer := 9
     );
-end entity count1digit;
 
---
+
+    port(
+        clk             : in  std_ulogic;                       -- 125 MHz clock
+        reset_n         : in  std_ulogic;                       -- Synchronous low-active reset
+        enable          : in  std_ulogic;                       -- Clock enabl, p1hz from prescaler, act. f. 1 clock cycle every second.
+        run             : in  std_ulogic;                       -- 1: Increment counter, 0: Keep current counter value
+        lap             : in  std_ulogic;                       -- 1: Freeze output, 0: Output counter value
+        init            : in  std_ulogic;                       -- 1: Reset counter to zero
+        digit           : out std_ulogic_vector (6 downto 0);   -- 7-segment control value output
+        ena_out         : out std_ulogic                        -- übertrag auf nächste Stelle
+--        led0            : out std_ulogic
+        );
+end count1digit;
+
+
 architecture rtl of count1digit is
-    -- LED Assignment: 6:0                            gfedcba
-    constant C_0 : std_ulogic_vector (6 downto 0) := "0111111";
-    constant C_1 : std_ulogic_vector (6 downto 0) := "0000110";
-    constant C_2 : std_ulogic_vector (6 downto 0) := "1011011";
-    constant C_3 : std_ulogic_vector (6 downto 0) := "1001111";
-    constant C_4 : std_ulogic_vector (6 downto 0) := "1100110";
-    constant C_5 : std_ulogic_vector (6 downto 0) := "1101101";
-    constant C_6 : std_ulogic_vector (6 downto 0) := "1111101";
-    constant C_7 : std_ulogic_vector (6 downto 0) := "0000111";
-    constant C_8 : std_ulogic_vector (6 downto 0) := "1111111";
-    constant C_9 : std_ulogic_vector (6 downto 0) := "1101111";
-    constant C_R : std_ulogic_vector (6 downto 0) := "0001000";
-    
-    signal reg_value : natural range 0 to 9;
-    signal cnt_value : natural range 0 to 9;
+
+    signal lapdisplay   : integer range 0 to 9;                 -- Holds lap time
+    signal counter      : integer range 0 to 9;                 -- Counts the enable pulses (p1hz)
+    signal reg_value    : natural range 0 to g_high;
+    signal cnt_value    : natural range 0 to g_high;
+
+    CONSTANT C_0: std_ulogic_vector (6 downto 0) := "0111111";  -- Display 0 "gfedcba"
+    CONSTANT C_1: std_ulogic_vector (6 downto 0) := "0000110";  -- Display 1 "gfedcba"
+    CONSTANT C_2: std_ulogic_vector (6 downto 0) := "1011011";  -- Display 2 "gfedcba"
+    CONSTANT C_3: std_ulogic_vector (6 downto 0) := "1001111";  -- Display 3 "gfedcba"
+    CONSTANT C_4: std_ulogic_vector (6 downto 0) := "1100110";  -- Display 4 "gfedcba"
+    CONSTANT C_5: std_ulogic_vector (6 downto 0) := "1101101";  -- Display 5 "gfedcba"
+    CONSTANT C_6: std_ulogic_vector (6 downto 0) := "1111101";  -- Display 6 "gfedcba"
+    CONSTANT C_7: std_ulogic_vector (6 downto 0) := "0000111";  -- Display 7 "gfedcba"
+    CONSTANT C_8: std_ulogic_vector (6 downto 0) := "1111111";  -- Display 8 "gfedcba"
+    CONSTANT C_9: std_ulogic_vector (6 downto 0) := "1101111";  -- Display 9 "gfedcba"
+
 begin
 
     -----------------------------------------------------
-    -- Sequential Process: 
+    -- Process sensitiv to clk
+    -- Counts the enable pulses (p1hz) if run = 1
+    -- If counter is equal to 9, then go back to 0
+    -- If init = 1, then go back to 0
     -----------------------------------------------------
-    p_count_reg : process (clk, reset_n)
+    p_CountSeconds : process (clk)
     begin
-        if rising_edge(clk) then
-            -- Initialization
-            if init = '1' then                   
-                cnt_value <= 0;
-                reg_value <= 0;
-                
-            -- counting
-            elsif run = '1' and enable = '1' then  
-                if cnt_value = 9 then
-                    cnt_value <= 0;
+    
+        if rising_edge (clk) then
+            if run = '1' and enable ='1' then
+                    ena_out <= '0';
+                if  counter = g_high then
+                    counter <= 0;
+                    ena_out <= '1';
                 else
-                    cnt_value <= cnt_value + 1;
+                    counter <= counter + 1;
                 end if;
             end if;
-
-            -- Lap handling
-            if lap = '0' then
-                reg_value <= cnt_value;
-            end if;       
             
-            -- reset
-            if reset_n = '0' then
-                cnt_value <= 0;                        
-                reg_value <= 0;
+            if init = '1' then
+          --      digit       <= "000000";
+          --      lapdisplay  <= 0;
+                counter     <= 0;
             end if;
         end if;
-    end process p_count_reg;
+        
+    end process p_CountSeconds; 
     
     -----------------------------------------------------
-    -- Combinational PROCESS:
+    -- Process sensitiv to clk
+    -- If lap is 0, then counter is displayed   
     -----------------------------------------------------
-    p_sevenseg_comb : process (reg_value)
+    p_LapDisplay : process (clk)
     begin
-        case reg_value is
-            when 0      => digit <= C_0;
-            when 1      => digit <= C_1;
-            when 2      => digit <= C_2;
-            when 3      => digit <= C_3;
-            when 4      => digit <= C_4;
-            when 5      => digit <= C_5;
-            when 6      => digit <= C_6;
-            when 7      => digit <= C_7;
-            when 8      => digit <= C_8;
-            when 9      => digit <= C_9;
-            when others => digit <= C_R;
-        end case;
-    end process p_sevenseg_comb;
+                       
+        if rising_edge (clk) then
+            if lap = '0' then
+                lapdisplay  <= counter;
+            end if;
+         --     else lapdisplay <= lapdisplay; -- unnötig,
+         --     VHDL erzeugt Flip-Flop das den Wert so lange speichert, bis er überschrieben wird.
+        end if;
+        
+    end process p_LapDisplay;
 
+-- 7 segment mapping
+with lapdisplay select
+        digit <=    c_0 when 0,
+                    c_1 when 1,
+                    c_2 when 2,
+                    c_3 when 3,
+                    c_4 when 4,
+                    c_5 when 5,
+                    c_6 when 6,
+                    c_7 when 7,
+                    c_8 when 8,
+                    c_9 when 9,
+                    c_0 when others;
+    
 end architecture rtl;
