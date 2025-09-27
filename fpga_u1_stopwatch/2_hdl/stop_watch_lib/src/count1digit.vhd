@@ -45,7 +45,7 @@ begin
     
         if rising_edge (clk) then
             if run = '1' and enable ='1' then
-                if counter = 9 then
+                if  counter = 9 then
                     counter <= 0;
                 else
                     counter <= counter + 1;
@@ -53,8 +53,6 @@ begin
             end if;
             
             if init = '1' then
-          --      digit       <= "000000";
-          --      lapdisplay  <= 0;
                 counter     <= 0;
             end if;
         end if;

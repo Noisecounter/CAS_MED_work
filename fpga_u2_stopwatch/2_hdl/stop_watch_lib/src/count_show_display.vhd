@@ -4,24 +4,24 @@ library ieee;
     
 entity count_show_display is
     port (
-        clk         : in std_ulogic;
-        reset_n     : in std_ulogic;
-        enable_0    : in std_ulogic;
-        run         : in std_ulogic;
-        lap         : in std_ulogic;                       -- 1: Freeze output, 0: Output counter value
-        init        : in std_ulogic;
-        c_digit_lo  : out std_ulogic_vector (6 downto 0);
-        c_digit_hi  : out std_ulogic_vector (6 downto 0);
-        s_digit_lo  : out std_ulogic_vector (6 downto 0);
-        s_digit_hi  : out std_ulogic_vector (6 downto 0)
+        clk         : in std_ulogic;                        -- 125 MHz clock
+        reset_n     : in std_ulogic;                        -- Synchronous low-active reset
+        enable_0    : in std_ulogic;                        -- Active for 1 clk cycle (ferquencie from prescaler)
+        run         : in std_ulogic;                        -- 1: Increment counter, 0: Keep current counter value
+        lap         : in std_ulogic;                        -- 1: Freeze output, 0: Output counter value
+        init        : in std_ulogic;                        -- 1: Reset counter to zero
+        c_digit_lo  : out std_ulogic_vector (6 downto 0);   -- 7-segment 1/100 s value output
+        c_digit_hi  : out std_ulogic_vector (6 downto 0);   -- 7-segment 1/10 s value output
+        s_digit_lo  : out std_ulogic_vector (6 downto 0);   -- 7-segment 1 s value output
+        s_digit_hi  : out std_ulogic_vector (6 downto 0)    -- 7-segment 10 s value output
         );
 end count_show_display;
 
 architecture structural of count_show_display is
 
-signal enable_1     : std_ulogic;           -- übertrag auf nächste Stelle
-signal enable_2     : std_ulogic;           
-signal enable_3     : std_ulogic;           
+signal enable_1     : std_ulogic;           -- carry over to the next digit
+signal enable_2     : std_ulogic;           -- carry over to the next digit
+signal enable_3     : std_ulogic;           -- carry over to the next digit
        
 
 begin
