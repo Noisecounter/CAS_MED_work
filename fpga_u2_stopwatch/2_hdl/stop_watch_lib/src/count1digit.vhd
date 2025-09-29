@@ -44,7 +44,7 @@ begin
 
     -----------------------------------------------------
     -- Process sensitiv to clk
-    -- Counts the enable pulses (p1hz) if run = 1
+    -- Counts the enable pulses from prescaler if run = 1
     -- If counter is equal to 9, then go back to 0
     -- If init = 1, then go back to 0
     -----------------------------------------------------
