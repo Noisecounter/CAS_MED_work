@@ -10,8 +10,8 @@ entity control is
         lap_init_p      : in  std_ulogic;                       -- Conditioned lap_init
         run             : out std_ulogic;                       -- 1: Increment counter, 0: Keep current counter value
         lap             : out std_ulogic;                       -- 1: Freeze output, 0: Output counter value
-        init            : out std_ulogic;                       -- 1: Reset counter to zero
-        led0            : out std_ulogic                        -- LED0 on Zybo board for debugging
+        init            : out std_ulogic                        -- 1: Reset counter to zero
+--        led0            : out std_ulogic                        -- LED0 on Zybo board for debugging
         );
 end control;
 
@@ -74,6 +74,6 @@ begin
   
     end process sequential;
     
-led0 <= init;
+-- led0 <= init;
 
 end architecture fsm;

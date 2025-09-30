@@ -2,7 +2,13 @@ library ieee;
     use ieee.std_logic_1164.all;
     use ieee.numeric_std.all;
     
+    use work.stop_watch_pkg.all;
+    
 entity count_show_display is
+    generic (
+            g_high : natural := c_num_digits
+            );
+
     port (
         clk         : in std_ulogic;                        -- 125 MHz clock
         reset_n     : in std_ulogic;                        -- Synchronous low-active reset

@@ -1,0 +1,302 @@
+m255
+K4
+z2
+Z0 !s12c _opt1
+Z1 !s99 nomlopt
+Z2 !s12c _opt
+R1
+!s12c _opt2
+R1
+R0
+R1
+R2
+R1
+!s11e vcom 2023.3 2023.07, Jul 17 2023
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z3 d/home/mike/Desktop/work/fpga_u2_stopwatch/3_questasim
+T_opt
+!s110 1759259147
+V7Kk7KG7ZVSY6HJRH=>KcN3
+Z4 04 11 3 work count1digit rtl 1
+=1-000ae431a4f1-68dc2a0b-96d42-36a1
+R1
+Z5 !s12b OEM100
+Z6 !s124 OEM100
+o-quiet -auto_acc_if_foreign -work stop_watch_lib -g g_high=5
+Z7 tCvgOpt 0
+n@_opt
+Z8 OL;O;2023.3;77
+R3
+T_opt1
+!s110 1759259162
+VC>@bn9O`FCCm8>hMA7L@G1
+R4
+=1-000ae431a4f1-68dc2a1a-d6428-3718
+R1
+R5
+R6
+Z9 o-quiet -auto_acc_if_foreign -work stop_watch_lib
+R7
+n@_opt1
+R8
+T_opt2
+!s110 1759258925
+VbJoJ]KRfTB0ZdfmJmzWaJ2
+04 9 3 work prescaler rtl 1
+=1-000ae431a4f1-68dc292d-2b4cc-34b8
+R1
+R5
+R6
+R9
+R7
+n@_opt2
+R8
+R3
+Econdition
+Z10 w1758362820
+Z11 DPx4 ieee 11 numeric_std 0 22 F8@]:i<mFK7<TjIzKcTGi0
+Z12 DPx3 std 6 textio 0 22 LS[?81n5ZHWBI9JkBZTV<2
+Z13 DPx4 ieee 14 std_logic_1164 0 22 6<US`=mgl_dFdCEFF7J=m1
+!i122 15
+R3
+Z14 8../2_hdl/stop_watch_lib/src/condition.vhd
+Z15 F../2_hdl/stop_watch_lib/src/condition.vhd
+l0
+L8 1
+VjU]h^UH3?3`ZVWJ<32gM]1
+!s100 ]`R;M=`[MPLTb3X@^?W@d2
+Z16 OL;C;2023.3;77
+32
+Z17 !s110 1759258692
+!i10b 1
+Z18 !s108 1759258692.000000
+Z19 !s90 -reportprogress|300|-work|stop_watch_lib|../2_hdl/stop_watch_lib/src/condition.vhd|
+Z20 !s107 ../2_hdl/stop_watch_lib/src/condition.vhd|
+!i113 0
+Z21 o-work stop_watch_lib
+Z22 tExplicit 1 CvgOpt 0
+Artl
+R11
+R12
+R13
+Z23 DEx4 work 9 condition 0 22 jU]h^UH3?3`ZVWJ<32gM]1
+!i122 15
+l31
+L21 91
+V:I7Jg7c_l9L5j3Qd5FOXh1
+!s100 12FCV9SC3d8Jf2leFN]YV1
+R16
+32
+R17
+!i10b 1
+R18
+R19
+R20
+!i113 0
+R21
+R22
+Econtrol
+Z24 w1759258600
+R11
+R12
+R13
+!i122 16
+R3
+Z25 8../2_hdl/stop_watch_lib/src/control.vhd
+Z26 F../2_hdl/stop_watch_lib/src/control.vhd
+l0
+L5 1
+VbFPLe94k6=BY2C^QG;:=C2
+!s100 flP4:eZGm`9=EC]IJAM=A0
+R16
+32
+R17
+!i10b 1
+R18
+Z27 !s90 -reportprogress|300|-work|stop_watch_lib|../2_hdl/stop_watch_lib/src/control.vhd|
+Z28 !s107 ../2_hdl/stop_watch_lib/src/control.vhd|
+!i113 0
+R21
+R22
+Afsm
+R11
+R12
+R13
+Z29 DEx4 work 7 control 0 22 bFPLe94k6=BY2C^QG;:=C2
+!i122 16
+l25
+L19 61
+VMcCf_Q47U:5SGD4m@0fQ33
+!s100 GV9MozgYGh82Q4HKG_ie^3
+R16
+32
+R17
+!i10b 1
+R18
+R27
+R28
+!i113 0
+R21
+R22
+Ecount1digit
+Z30 w1759256610
+R11
+R12
+R13
+!i122 14
+R3
+Z31 8../2_hdl/stop_watch_lib/src/count1digit.vhd
+Z32 F../2_hdl/stop_watch_lib/src/count1digit.vhd
+l0
+L5 1
+VhnkO8?ULi3LlM[]i9GC=U0
+!s100 <`WMEL<ZcM<N9HGZ6Z<jB0
+R16
+32
+R17
+!i10b 1
+R18
+Z33 !s90 -reportprogress|300|-work|stop_watch_lib|../2_hdl/stop_watch_lib/src/count1digit.vhd|
+Z34 !s107 ../2_hdl/stop_watch_lib/src/count1digit.vhd|
+!i113 0
+R21
+R22
+Artl
+R11
+R12
+R13
+DEx4 work 11 count1digit 0 22 hnkO8?ULi3LlM[]i9GC=U0
+!i122 14
+l43
+L25 81
+V5O^PzDgd9bVH_[46dlUFI0
+!s100 X]k0JWIk2b:D2^lGAKb7^3
+R16
+32
+R17
+!i10b 1
+R18
+R33
+R34
+!i113 0
+R21
+R22
+Eprescaler
+R30
+Z35 DPx4 work 14 stop_watch_pkg 0 22 <]k8DdM7Ez9XlIB<=hA^g2
+R11
+R12
+R13
+!i122 17
+R3
+Z36 8../2_hdl/stop_watch_lib/src/prescaler.vhd
+Z37 F../2_hdl/stop_watch_lib/src/prescaler.vhd
+l0
+L12 1
+V1QTzBZ19<lO^k7OQA5zhd3
+!s100 MgCRHfkief8momKM?_TaW1
+R16
+32
+R17
+!i10b 1
+R18
+Z38 !s90 -reportprogress|300|-work|stop_watch_lib|../2_hdl/stop_watch_lib/src/prescaler.vhd|
+Z39 !s107 ../2_hdl/stop_watch_lib/src/prescaler.vhd|
+!i113 0
+R21
+R22
+Artl
+R35
+R11
+R12
+R13
+Z40 DEx4 work 9 prescaler 0 22 1QTzBZ19<lO^k7OQA5zhd3
+!i122 17
+l37
+L27 55
+VEKP?J<X:oPbi]J<L>lQa41
+!s100 =Wcj;XMCUlMliVf>99Ozl1
+R16
+32
+R17
+!i10b 1
+R18
+R38
+R39
+!i113 0
+R21
+R22
+Estop_watch
+Z41 w1759258676
+R11
+R12
+R13
+!i122 18
+R3
+Z42 8../2_hdl/stop_watch_lib/src/stop_watch.vhd
+Z43 F../2_hdl/stop_watch_lib/src/stop_watch.vhd
+l0
+L5 1
+V0jzejzId8ga:O=OeADSjj2
+!s100 ]VP<NOXQlkcR0O<7J5cRQ3
+R16
+32
+R17
+!i10b 1
+R18
+Z44 !s90 -reportprogress|300|-work|stop_watch_lib|../2_hdl/stop_watch_lib/src/stop_watch.vhd|
+Z45 !s107 ../2_hdl/stop_watch_lib/src/stop_watch.vhd|
+!i113 0
+R21
+R22
+Astructural
+R29
+R23
+R35
+R40
+R11
+R12
+R13
+DEx4 work 10 stop_watch 0 22 0jzejzId8ga:O=OeADSjj2
+!i122 18
+l26
+L16 42
+VF]SIB8^:[9C1l]KH;h4;J2
+!s100 j68I^KT[FBalReik7@:ik2
+R16
+32
+R17
+!i10b 1
+R18
+R44
+R45
+!i113 0
+R21
+R22
+Pstop_watch_pkg
+R12
+R13
+!i122 13
+w1759258442
+R3
+8../2_hdl/stop_watch_lib/src/stop_watch_pkg.vhd
+F../2_hdl/stop_watch_lib/src/stop_watch_pkg.vhd
+l0
+L4 14
+V<]k8DdM7Ez9XlIB<=hA^g2
+!s100 L?k6_5glLCWcJ6ohm;Qi02
+R16
+32
+R17
+!i10b 1
+R18
+!s90 -reportprogress|300|-work|stop_watch_lib|../2_hdl/stop_watch_lib/src/stop_watch_pkg.vhd|
+!s107 ../2_hdl/stop_watch_lib/src/stop_watch_pkg.vhd|
+!i113 0
+R21
+R22

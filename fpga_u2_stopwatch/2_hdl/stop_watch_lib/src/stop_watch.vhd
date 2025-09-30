@@ -50,8 +50,8 @@ U3: entity work.control
                 lap_init_p      => lap_init_p,
                 run             => run,
                 init            => init,
-                lap             => lap,
-                led0            => led0
+                lap             => lap
+--                led0            => led0
             );
                         
 end structural;
