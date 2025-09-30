@@ -26,8 +26,8 @@ architecture rtl of count1digit is
 
     signal lapdisplay   : integer range 0 to 9;                 -- Holds lap time
     signal counter      : integer range 0 to 9;                 -- Counts the enable pulses (p1hz)
-    signal reg_value    : natural range 0 to g_high;
-    signal cnt_value    : natural range 0 to g_high;
+--    signal reg_value    : natural range 0 to g_high;
+--    signal cnt_value    : natural range 0 to g_high;
 
     CONSTANT C_0: std_ulogic_vector (6 downto 0) := "0111111";  -- Display 0 "gfedcba"
     CONSTANT C_1: std_ulogic_vector (6 downto 0) := "0000110";  -- Display 1 "gfedcba"
