@@ -26,14 +26,14 @@ end prescaler;
 
 architecture rtl of prescaler is
   -- For synthesis
-  constant C_MAX1_SYN : natural := 124999; --125 MHz > 1 KHz / 124999
-  constant C_MAX2_SYN : natural := 4;   -- 1 KHz > 100 Hz  / 10
+--  constant C_MAX1_SYN : natural := 124999; --125 MHz > 1 KHz / 124999
+--  constant C_MAX2_SYN : natural := 4;   -- 1 KHz > 100 Hz  / 10
   -- For simulation only
-  constant C_MAX1_SIM : natural := 4;
-  constant C_MAX2_SIM : natural := 9;
+--  constant C_MAX1_SIM : natural := 4;
+--  constant C_MAX2_SIM : natural := 9;
 
-  signal count1       : natural range 0 to C_MAX1_SYN;
-  signal count2       : natural range 0 to C_MAX2_SYN;
+  signal count1       : natural range 0 to g_max1;
+  signal count2       : natural range 0 to g_max2;
 begin
 
     prescale_reg : process (clk, reset_n)
@@ -44,8 +44,8 @@ begin
             -- default value
             p1khz <= '0';
             p100hz  <= '0';
-            v_max1 := C_MAX1_SYN;
-            v_max2 := C_MAX2_SYN;
+            v_max1 := g_max1;
+            v_max2 := g_max2;
             -- synthesis translate_off
             v_max1 := C_MAX1_SIM;
             v_max2 := C_MAX2_SIM;
