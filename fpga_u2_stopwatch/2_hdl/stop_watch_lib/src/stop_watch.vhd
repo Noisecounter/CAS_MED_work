@@ -1,19 +1,27 @@
 library ieee;
     use ieee.std_logic_1164.all;
     use ieee.numeric_std.all;
+
+    use work.stop_watch_pkg.all;
     
 entity stop_watch is
-    port (
-        clk         : in std_ulogic;
-        reset_n     : in std_ulogic;
-        start_stop  : in std_ulogic;
-        lap_init    : in std_ulogic;
-        s_digit_sel : out std_ulogic_vector (6 downto 0);
-        s_digit     : out std_ulogic_vector (6 downto 0);
-        c_digit_sel : out std_ulogic_vector (6 downto 0);
-        c_digit     : out std_ulogic_vector (6 downto 0);
-        led0        : out std_ulogic
-        );
+
+    generic (
+            g_sim   : boolean := true
+            );
+
+    port    (
+            clk         : in std_ulogic;
+            reset_n     : in std_ulogic;
+            start_stop  : in std_ulogic;
+            lap_init    : in std_ulogic;
+            s_digit_sel : out std_ulogic_vector (6 downto 0);
+            s_digit     : out std_ulogic_vector (6 downto 0);
+            c_digit_sel : out std_ulogic_vector (6 downto 0);
+            c_digit     : out std_ulogic_vector (6 downto 0);
+            led0        : out std_ulogic
+            );
+            
 end stop_watch;
 
 architecture structural of stop_watch is
