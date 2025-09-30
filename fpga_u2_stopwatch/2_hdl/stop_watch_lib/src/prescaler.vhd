@@ -5,7 +5,16 @@ library ieee;
     use ieee.std_logic_1164.all;
     use ieee.numeric_std.all;
 
+library work;
+
+use work.stop_watch_pkg.all;
+
 entity prescaler is
+    generic (
+            g_max1 : natural := c_max1_syn;
+            g_max2 : natural := c_max2_syn
+            );
+    
     port (
         clk     : in std_ulogic;
         reset_n : in std_ulogic;
@@ -15,11 +24,10 @@ entity prescaler is
     );
 end prescaler;
 
-
 architecture rtl of prescaler is
   -- For synthesis
   constant C_MAX1_SYN : natural := 124999; --125 MHz > 1 KHz / 124999
-  constant C_MAX2_SYN : natural := 999;   -- 1 KHz > 1 Hz  / 1000
+  constant C_MAX2_SYN : natural := 4;   -- 1 KHz > 1 Hz  / 1000
   -- For simulation only
   constant C_MAX1_SIM : natural := 4;
   constant C_MAX2_SIM : natural := 9;
