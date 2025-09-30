@@ -4,7 +4,7 @@ LIBRARY ieee;
 
 entity count1digit is
     generic(
-        g_high : integer := 9
+        g_high : integer := 9                                   -- Generic integer value
     );
 
 
@@ -53,19 +53,19 @@ begin
     
         if rising_edge (clk) then
             if run = '1' and enable ='1' then
-                    ena_out <= '0';
-                if  counter = g_high then
-                    counter <= 0;
-                    ena_out <= '1';
+                    ena_out <= '0';                             -- Port Übertrag wird auf 0 gesetzt
+                if  counter = g_high then                       -- Wenn counter g_high erreicht
+                    counter <= 0;                               -- setze counter 0
+                    ena_out <= '1';                             -- Port Übertrag 1
                 else
-                    counter <= counter + 1;
+                    counter <= counter + 1;                     -- Counter wird bei jedem Durchgang (enable) um 1 erhöht
                 end if;
             end if;
             
-            if init = '1' then
+            if init = '1' then                                  -- Rückstellung
           --      digit       <= "000000";
           --      lapdisplay  <= 0;
-                counter     <= 0;
+                counter     <= 0;                               -- Setze Counter auf 0
             end if;
         end if;
         
