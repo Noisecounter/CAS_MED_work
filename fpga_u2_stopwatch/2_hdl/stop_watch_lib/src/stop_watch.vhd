@@ -18,7 +18,7 @@ architecture structural of stop_watch is
 signal start_stop_p : std_ulogic;           -- conditioned start_stop
 signal lap_init_p   : std_ulogic;           -- conditioned lap_init
 signal p1khz        : std_ulogic;           -- 1 kHz from prescaler
-signal p1hz         : std_logic;            -- 1 Hz from prescaler
+signal p100hz       : std_logic;            -- 1 Hz from prescaler
 signal run          : std_logic;            -- run from control
 signal lap          : std_ulogic;           -- lap from control
 signal init         : std_ulogic;           -- init from control
@@ -28,7 +28,7 @@ begin
 U1: entity work.prescaler
     port map (  clk             => clk,
                 reset_n         => reset_n,
-                p1hz            => p1hz,
+                p100hz          => p100hz,
                 p1khz           => p1khz
 --                led0            => led0 
             );

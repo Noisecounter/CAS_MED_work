@@ -18,7 +18,7 @@ entity prescaler is
     port (
         clk     : in std_ulogic;
         reset_n : in std_ulogic;
-        p1hz    : out std_ulogic;
+        p100hz  : out std_ulogic;
         p1khz   : out std_ulogic
 --        led0            : out std_ulogic
     );
@@ -27,7 +27,7 @@ end prescaler;
 architecture rtl of prescaler is
   -- For synthesis
   constant C_MAX1_SYN : natural := 124999; --125 MHz > 1 KHz / 124999
-  constant C_MAX2_SYN : natural := 4;   -- 1 KHz > 1 Hz  / 1000
+  constant C_MAX2_SYN : natural := 4;   -- 1 KHz > 100 Hz  / 10
   -- For simulation only
   constant C_MAX1_SIM : natural := 4;
   constant C_MAX2_SIM : natural := 9;
@@ -43,7 +43,7 @@ begin
         if rising_edge (clk) then
             -- default value
             p1khz <= '0';
-            p1hz  <= '0';
+            p100hz  <= '0';
             v_max1 := C_MAX1_SYN;
             v_max2 := C_MAX2_SYN;
             -- synthesis translate_off
@@ -57,7 +57,7 @@ begin
                 count1 <= 0;
                 if count2 = v_max2 then
                     -- set enable
-                    p1hz   <= '1';
+                    p100hz <= '1';
                     count2 <= 0;
                 else
                     count2 <= count2 + 1;
@@ -71,7 +71,7 @@ begin
                 count1 <= 0;
                 count2 <= 0;
                 p1khz  <= '0';
-                p1hz   <= '0';
+                p100hz <= '0';
             end if;
         end if;
     end process;
