@@ -8,7 +8,10 @@ entity stop_watch is
         reset_n     : in std_ulogic;
         start_stop  : in std_ulogic;
         lap_init    : in std_ulogic;
-        sec_digit   : out std_ulogic_vector (6 downto 0);
+        s_digit_sel : out std_ulogic_vector (6 downto 0);
+        s_digit     : out std_ulogic_vector (6 downto 0);
+        c_digit_sel : out std_ulogic_vector (6 downto 0);
+        c_digit     : out std_ulogic_vector (6 downto 0);
         led0        : out std_ulogic
         );
 end stop_watch;
@@ -53,5 +56,11 @@ U3: entity work.control
                 lap             => lap
 --                led0            => led0
             );
+            
+U4: entity work.count_show_display
+    port map (  clk             => clk,
+                reset_n         => reset_n,
+                enable_0        => p100hz
+            );            
                         
 end structural;
