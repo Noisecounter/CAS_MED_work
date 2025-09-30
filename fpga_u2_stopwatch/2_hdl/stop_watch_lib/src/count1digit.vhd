@@ -16,7 +16,7 @@ entity count1digit is
         lap             : in  std_ulogic;                       -- 1: Freeze output, 0: Output counter value
         init            : in  std_ulogic;                       -- 1: Reset counter to zero
         digit           : out std_ulogic_vector (6 downto 0);   -- 7-segment control value output
-        ena_out         : out std_ulogic                        -- übertrag auf nächste Stelle
+        carry_out         : out std_ulogic                        -- übertrag auf nächste Stelle
 --        led0            : out std_ulogic
         );
 end count1digit;
@@ -53,14 +53,14 @@ begin
     
         if rising_edge (clk) then
             if run = '1' and enable ='1' then
-                    ena_out <= '0';                             -- Port Übertrag wird auf 0 gesetzt
-                if  counter = g_high then                       -- Wenn counter g_high erreicht
-                    counter <= 0;                               -- setze counter 0
-                    ena_out <= '1';                             -- Port Übertrag 1
-                else
-                    counter <= counter + 1;                     -- Counter wird bei jedem Durchgang (enable) um 1 erhöht
+                carry_out <= '0';                               -- Port Übertrag wird auf 0 gesetzt
+                    if  counter = g_high then                   -- Wenn counter g_high erreicht
+                        counter <= 0;                           -- setze counter 0
+                        carry_out <= '1';                       -- Port Übertrag 1
+                        else
+                        counter <= counter + 1;                 -- Counter wird bei jedem Durchgang (enable) um 1 erhöht
+                    end if;
                 end if;
-            end if;
             
             if init = '1' then                                  -- Rückstellung
           --      digit       <= "000000";
