@@ -76,7 +76,11 @@ U4: entity work.count_show_display
                 run             => run,
                 lap             => lap,
                 init            => init,
-                enable_0        => p100hz
+                enable_0        => p100hz,
+                c_digit_lo      => c_digit_lo,
+                c_digit_hi      => c_digit_hi,
+                s_digit_lo      => s_digit_lo,
+                s_digit_hi      => s_digit_hi
             );
             
 U5: entity work.pmod_ssd

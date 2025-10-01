@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
-| Date         : Wed Oct  1 18:49:57 2025
+| Date         : Wed Oct  1 19:10:05 2025
 | Host         : mike-NH5xAx running 64-bit Ubuntu 24.04.2 LTS
 | Command      : report_drc -file stop_watch_drc_routed.rpt -pb stop_watch_drc_routed.pb -rpx stop_watch_drc_routed.rpx
 | Design       : stop_watch
@@ -24,21 +24,15 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max checks: <unlimited>
-             Checks found: 2
-+--------+------------------+----------------------------+--------+
-| Rule   | Severity         | Description                | Checks |
-+--------+------------------+----------------------------+--------+
-| UCIO-1 | Critical Warning | Unconstrained Logical Port | 1      |
-| ZPS7-1 | Warning          | PS7 block required         | 1      |
-+--------+------------------+----------------------------+--------+
+             Checks found: 1
++--------+----------+--------------------+--------+
+| Rule   | Severity | Description        | Checks |
++--------+----------+--------------------+--------+
+| ZPS7-1 | Warning  | PS7 block required | 1      |
++--------+----------+--------------------+--------+
 
 2. REPORT DETAILS
 -----------------
-UCIO-1#1 Critical Warning
-Unconstrained Logical Port  
-14 out of 29 logical ports have no user assigned specific location constraint (LOC). This may cause I/O contention or incompatibility with the board power or connectivity affecting performance, signal integrity or in extreme cases cause damage to the device or the components to which it is connected. To correct this violation, specify all pin locations. This design will fail to generate a bitstream unless all logical ports have a user specified site LOC constraint defined.  To allow bitstream creation with unspecified pin locations (not recommended), use this command: set_property SEVERITY {Warning} [get_drc_checks UCIO-1].  NOTE: When using the Vivado Runs infrastructure (e.g. launch_runs Tcl command), add this command to a .tcl file and add that file as a pre-hook for write_bitstream step for the implementation run.  Problem ports: c_digit_sel[6:0], s_digit_sel[6:0].
-Related violations: <none>
-
 ZPS7-1#1 Warning
 PS7 block required  
 The PS7 cell must be used in this Zynq design in order to enable correct default configuration.

@@ -3,8 +3,8 @@
 # SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Wed Oct  1 18:48:47 2025
-# Process ID         : 22920
+# Start of session at: Wed Oct  1 19:08:57 2025
+# Process ID         : 34838
 # Current directory  : /home/mike/Desktop/work/fpga_u2_stopwatch/4_vivado/fpga_u2_stopwatch/fpga_u2_stopwatch.runs/synth_1
 # Command line       : vivado -log stop_watch.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source stop_watch.tcl
 # Log file           : /home/mike/Desktop/work/fpga_u2_stopwatch/4_vivado/fpga_u2_stopwatch/fpga_u2_stopwatch.runs/synth_1/stop_watch.vds
@@ -13,13 +13,13 @@
 # Platform           : Ubuntu
 # Operating System   : Ubuntu 24.04.2 LTS
 # Processor Detail   : AMD Ryzen 9 3900X 12-Core Processor
-# CPU Frequency      : 2790.474 MHz
+# CPU Frequency      : 2108.445 MHz
 # CPU Physical cores : 12
 # CPU Logical cores  : 24
 # Host memory        : 16650 MB
 # Swap memory        : 18924 MB
 # Total Virtual      : 35575 MB
-# Available Virtual  : 30663 MB
+# Available Virtual  : 30621 MB
 #-----------------------------------------------------------
 source stop_watch.tcl -notrace
 Command: read_checkpoint -auto_incremental -incremental /home/mike/Desktop/work/fpga_u2_stopwatch/4_vivado/fpga_u2_stopwatch/fpga_u2_stopwatch.srcs/utils_1/imports/synth_1/stop_watch.dcp
@@ -34,9 +34,9 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 23023
+INFO: [Synth 8-7075] Helper process launched with PID 34936
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1884.574 ; gain = 429.801 ; free physical = 6641 ; free virtual = 28207
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1884.496 ; gain = 413.852 ; free physical = 6624 ; free virtual = 28198
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'stop_watch' [/home/mike/Desktop/work/fpga_u2_stopwatch/2_hdl/stop_watch_lib/src/stop_watch.vhd:27]
 	Parameter g_sim bound to: 0 - type: bool 
@@ -56,58 +56,26 @@ INFO: [Synth 8-256] done synthesizing module 'stop_watch' (0#1) [/home/mike/Desk
 WARNING: [Synth 8-3848] Net enable_1 in module/entity count_show_display does not have driver. [/home/mike/Desktop/work/fpga_u2_stopwatch/2_hdl/stop_watch_lib/src/count_show_display.vhd:28]
 WARNING: [Synth 8-3848] Net enable_2 in module/entity count_show_display does not have driver. [/home/mike/Desktop/work/fpga_u2_stopwatch/2_hdl/stop_watch_lib/src/count_show_display.vhd:29]
 WARNING: [Synth 8-3848] Net enable_3 in module/entity count_show_display does not have driver. [/home/mike/Desktop/work/fpga_u2_stopwatch/2_hdl/stop_watch_lib/src/count_show_display.vhd:30]
-WARNING: [Synth 8-3848] Net s_digit_sel in module/entity stop_watch does not have driver. [/home/mike/Desktop/work/fpga_u2_stopwatch/2_hdl/stop_watch_lib/src/stop_watch.vhd:18]
-WARNING: [Synth 8-3848] Net s_digit in module/entity stop_watch does not have driver. [/home/mike/Desktop/work/fpga_u2_stopwatch/2_hdl/stop_watch_lib/src/stop_watch.vhd:19]
-WARNING: [Synth 8-3848] Net c_digit_sel in module/entity stop_watch does not have driver. [/home/mike/Desktop/work/fpga_u2_stopwatch/2_hdl/stop_watch_lib/src/stop_watch.vhd:20]
-WARNING: [Synth 8-3848] Net c_digit in module/entity stop_watch does not have driver. [/home/mike/Desktop/work/fpga_u2_stopwatch/2_hdl/stop_watch_lib/src/stop_watch.vhd:21]
 WARNING: [Synth 8-3848] Net led0 in module/entity stop_watch does not have driver. [/home/mike/Desktop/work/fpga_u2_stopwatch/2_hdl/stop_watch_lib/src/stop_watch.vhd:22]
-WARNING: [Synth 8-3848] Net c_digit_lo in module/entity stop_watch does not have driver. [/home/mike/Desktop/work/fpga_u2_stopwatch/2_hdl/stop_watch_lib/src/stop_watch.vhd:36]
-WARNING: [Synth 8-3848] Net c_digit_hi in module/entity stop_watch does not have driver. [/home/mike/Desktop/work/fpga_u2_stopwatch/2_hdl/stop_watch_lib/src/stop_watch.vhd:37]
 WARNING: [Synth 8-3848] Net s_digit_lo in module/entity stop_watch does not have driver. [/home/mike/Desktop/work/fpga_u2_stopwatch/2_hdl/stop_watch_lib/src/stop_watch.vhd:38]
 WARNING: [Synth 8-3848] Net s_digit_hi in module/entity stop_watch does not have driver. [/home/mike/Desktop/work/fpga_u2_stopwatch/2_hdl/stop_watch_lib/src/stop_watch.vhd:39]
+WARNING: [Synth 8-3848] Net c_digit_lo in module/entity stop_watch does not have driver. [/home/mike/Desktop/work/fpga_u2_stopwatch/2_hdl/stop_watch_lib/src/stop_watch.vhd:36]
+WARNING: [Synth 8-3848] Net c_digit_hi in module/entity stop_watch does not have driver. [/home/mike/Desktop/work/fpga_u2_stopwatch/2_hdl/stop_watch_lib/src/stop_watch.vhd:37]
 WARNING: [Synth 8-7129] Port reset_n in module count1digit is either unconnected or has no load
-WARNING: [Synth 8-7129] Port s_digit_sel[6] in module stop_watch is either unconnected or has no load
-WARNING: [Synth 8-7129] Port s_digit_sel[5] in module stop_watch is either unconnected or has no load
-WARNING: [Synth 8-7129] Port s_digit_sel[4] in module stop_watch is either unconnected or has no load
-WARNING: [Synth 8-7129] Port s_digit_sel[3] in module stop_watch is either unconnected or has no load
-WARNING: [Synth 8-7129] Port s_digit_sel[2] in module stop_watch is either unconnected or has no load
-WARNING: [Synth 8-7129] Port s_digit_sel[1] in module stop_watch is either unconnected or has no load
-WARNING: [Synth 8-7129] Port s_digit_sel[0] in module stop_watch is either unconnected or has no load
-WARNING: [Synth 8-7129] Port s_digit[6] in module stop_watch is either unconnected or has no load
-WARNING: [Synth 8-7129] Port s_digit[5] in module stop_watch is either unconnected or has no load
-WARNING: [Synth 8-7129] Port s_digit[4] in module stop_watch is either unconnected or has no load
-WARNING: [Synth 8-7129] Port s_digit[3] in module stop_watch is either unconnected or has no load
-WARNING: [Synth 8-7129] Port s_digit[2] in module stop_watch is either unconnected or has no load
-WARNING: [Synth 8-7129] Port s_digit[1] in module stop_watch is either unconnected or has no load
-WARNING: [Synth 8-7129] Port s_digit[0] in module stop_watch is either unconnected or has no load
-WARNING: [Synth 8-7129] Port c_digit_sel[6] in module stop_watch is either unconnected or has no load
-WARNING: [Synth 8-7129] Port c_digit_sel[5] in module stop_watch is either unconnected or has no load
-WARNING: [Synth 8-7129] Port c_digit_sel[4] in module stop_watch is either unconnected or has no load
-WARNING: [Synth 8-7129] Port c_digit_sel[3] in module stop_watch is either unconnected or has no load
-WARNING: [Synth 8-7129] Port c_digit_sel[2] in module stop_watch is either unconnected or has no load
-WARNING: [Synth 8-7129] Port c_digit_sel[1] in module stop_watch is either unconnected or has no load
-WARNING: [Synth 8-7129] Port c_digit_sel[0] in module stop_watch is either unconnected or has no load
-WARNING: [Synth 8-7129] Port c_digit[6] in module stop_watch is either unconnected or has no load
-WARNING: [Synth 8-7129] Port c_digit[5] in module stop_watch is either unconnected or has no load
-WARNING: [Synth 8-7129] Port c_digit[4] in module stop_watch is either unconnected or has no load
-WARNING: [Synth 8-7129] Port c_digit[3] in module stop_watch is either unconnected or has no load
-WARNING: [Synth 8-7129] Port c_digit[2] in module stop_watch is either unconnected or has no load
-WARNING: [Synth 8-7129] Port c_digit[1] in module stop_watch is either unconnected or has no load
-WARNING: [Synth 8-7129] Port c_digit[0] in module stop_watch is either unconnected or has no load
 WARNING: [Synth 8-7129] Port led0 in module stop_watch is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1959.543 ; gain = 504.770 ; free physical = 6554 ; free virtual = 28121
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1959.434 ; gain = 488.789 ; free physical = 6531 ; free virtual = 28107
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1977.355 ; gain = 522.582 ; free physical = 6554 ; free virtual = 28121
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1974.277 ; gain = 503.633 ; free physical = 6531 ; free virtual = 28107
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1977.355 ; gain = 522.582 ; free physical = 6554 ; free virtual = 28121
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1974.277 ; gain = 503.633 ; free physical = 6531 ; free virtual = 28107
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1977.355 ; gain = 0.000 ; free physical = 6554 ; free virtual = 28121
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1974.277 ; gain = 0.000 ; free physical = 6531 ; free virtual = 28107
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -118,28 +86,28 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/stop_watch_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2126.105 ; gain = 0.000 ; free physical = 6539 ; free virtual = 28106
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2130.027 ; gain = 0.000 ; free physical = 6533 ; free virtual = 28109
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2126.105 ; gain = 0.000 ; free physical = 6539 ; free virtual = 28106
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2130.027 ; gain = 0.000 ; free physical = 6533 ; free virtual = 28109
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2126.105 ; gain = 671.332 ; free physical = 6558 ; free virtual = 28126
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2130.027 ; gain = 659.383 ; free physical = 6553 ; free virtual = 28129
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2134.109 ; gain = 679.336 ; free physical = 6558 ; free virtual = 28126
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2138.031 ; gain = 667.387 ; free physical = 6553 ; free virtual = 28129
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2134.109 ; gain = 679.336 ; free physical = 6558 ; free virtual = 28126
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2138.031 ; gain = 667.387 ; free physical = 6553 ; free virtual = 28129
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'control'
 ---------------------------------------------------------------------------------------------------
@@ -151,7 +119,7 @@ INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in modul
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using encoding 'sequential' in module 'control'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2134.109 ; gain = 679.336 ; free physical = 6558 ; free virtual = 28126
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2138.031 ; gain = 667.387 ; free physical = 6553 ; free virtual = 28130
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-223] decloning instance 'U4/U2' (count1digit) to 'U4/U3'
 INFO: [Synth 8-223] decloning instance 'U4/U2' (count1digit) to 'U4/U4'
@@ -189,57 +157,29 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
-WARNING: [Synth 8-7129] Port s_digit_sel[6] in module stop_watch is either unconnected or has no load
-WARNING: [Synth 8-7129] Port s_digit_sel[5] in module stop_watch is either unconnected or has no load
-WARNING: [Synth 8-7129] Port s_digit_sel[4] in module stop_watch is either unconnected or has no load
-WARNING: [Synth 8-7129] Port s_digit_sel[3] in module stop_watch is either unconnected or has no load
-WARNING: [Synth 8-7129] Port s_digit_sel[2] in module stop_watch is either unconnected or has no load
-WARNING: [Synth 8-7129] Port s_digit_sel[1] in module stop_watch is either unconnected or has no load
-WARNING: [Synth 8-7129] Port s_digit_sel[0] in module stop_watch is either unconnected or has no load
-WARNING: [Synth 8-7129] Port s_digit[6] in module stop_watch is either unconnected or has no load
-WARNING: [Synth 8-7129] Port s_digit[5] in module stop_watch is either unconnected or has no load
-WARNING: [Synth 8-7129] Port s_digit[4] in module stop_watch is either unconnected or has no load
-WARNING: [Synth 8-7129] Port s_digit[3] in module stop_watch is either unconnected or has no load
-WARNING: [Synth 8-7129] Port s_digit[2] in module stop_watch is either unconnected or has no load
-WARNING: [Synth 8-7129] Port s_digit[1] in module stop_watch is either unconnected or has no load
-WARNING: [Synth 8-7129] Port s_digit[0] in module stop_watch is either unconnected or has no load
-WARNING: [Synth 8-7129] Port c_digit_sel[6] in module stop_watch is either unconnected or has no load
-WARNING: [Synth 8-7129] Port c_digit_sel[5] in module stop_watch is either unconnected or has no load
-WARNING: [Synth 8-7129] Port c_digit_sel[4] in module stop_watch is either unconnected or has no load
-WARNING: [Synth 8-7129] Port c_digit_sel[3] in module stop_watch is either unconnected or has no load
-WARNING: [Synth 8-7129] Port c_digit_sel[2] in module stop_watch is either unconnected or has no load
-WARNING: [Synth 8-7129] Port c_digit_sel[1] in module stop_watch is either unconnected or has no load
-WARNING: [Synth 8-7129] Port c_digit_sel[0] in module stop_watch is either unconnected or has no load
-WARNING: [Synth 8-7129] Port c_digit[6] in module stop_watch is either unconnected or has no load
-WARNING: [Synth 8-7129] Port c_digit[5] in module stop_watch is either unconnected or has no load
-WARNING: [Synth 8-7129] Port c_digit[4] in module stop_watch is either unconnected or has no load
-WARNING: [Synth 8-7129] Port c_digit[3] in module stop_watch is either unconnected or has no load
-WARNING: [Synth 8-7129] Port c_digit[2] in module stop_watch is either unconnected or has no load
-WARNING: [Synth 8-7129] Port c_digit[1] in module stop_watch is either unconnected or has no load
-WARNING: [Synth 8-7129] Port c_digit[0] in module stop_watch is either unconnected or has no load
 WARNING: [Synth 8-7129] Port led0 in module stop_watch is either unconnected or has no load
 WARNING: [Synth 8-3332] Sequential element (U3/FSM_sequential_current_state_reg[1]) is unused and will be removed from module stop_watch.
 WARNING: [Synth 8-3332] Sequential element (U3/FSM_sequential_current_state_reg[0]) is unused and will be removed from module stop_watch.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2134.109 ; gain = 679.336 ; free physical = 6564 ; free virtual = 28136
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2138.031 ; gain = 667.387 ; free physical = 6552 ; free virtual = 28134
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 2140.109 ; gain = 685.336 ; free physical = 6484 ; free virtual = 28057
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2150.031 ; gain = 679.387 ; free physical = 6463 ; free virtual = 28044
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 2140.109 ; gain = 685.336 ; free physical = 6484 ; free virtual = 28057
+Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2150.031 ; gain = 679.387 ; free physical = 6463 ; free virtual = 28044
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 2149.125 ; gain = 694.352 ; free physical = 6468 ; free virtual = 28041
+Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2159.047 ; gain = 688.402 ; free physical = 6455 ; free virtual = 28036
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -257,37 +197,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2310.938 ; gain = 856.164 ; free physical = 6342 ; free virtual = 27915
+Finished IO Insertion : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2320.859 ; gain = 850.215 ; free physical = 6316 ; free virtual = 27898
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2310.938 ; gain = 856.164 ; free physical = 6342 ; free virtual = 27915
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2320.859 ; gain = 850.215 ; free physical = 6316 ; free virtual = 27898
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2310.938 ; gain = 856.164 ; free physical = 6342 ; free virtual = 27915
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2320.859 ; gain = 850.215 ; free physical = 6316 ; free virtual = 27898
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2310.938 ; gain = 856.164 ; free physical = 6342 ; free virtual = 27915
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2320.859 ; gain = 850.215 ; free physical = 6316 ; free virtual = 27898
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2310.938 ; gain = 856.164 ; free physical = 6342 ; free virtual = 27915
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2320.859 ; gain = 850.215 ; free physical = 6316 ; free virtual = 27898
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2310.938 ; gain = 856.164 ; free physical = 6342 ; free virtual = 27915
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2320.859 ; gain = 850.215 ; free physical = 6316 ; free virtual = 27898
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -303,30 +243,36 @@ Report Cell Usage:
 +------+------+------+
 |      |Cell  |Count |
 +------+------+------+
-|1     |OBUFT |    29|
+|1     |BUFG  |     1|
+|2     |LUT2  |     1|
+|3     |LUT3  |     1|
+|4     |FDRE  |     3|
+|5     |IBUF  |     2|
+|6     |OBUF  |    16|
+|7     |OBUFT |     1|
 +------+------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2310.938 ; gain = 856.164 ; free physical = 6342 ; free virtual = 27915
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2320.859 ; gain = 850.215 ; free physical = 6316 ; free virtual = 27898
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 32 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2310.938 ; gain = 707.414 ; free physical = 6342 ; free virtual = 27915
-Synthesis Optimization Complete : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2310.945 ; gain = 856.164 ; free physical = 6342 ; free virtual = 27915
+Synthesis finished with 0 errors, 0 critical warnings and 4 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 2320.859 ; gain = 694.465 ; free physical = 6319 ; free virtual = 27900
+Synthesis Optimization Complete : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2320.867 ; gain = 850.215 ; free physical = 6319 ; free virtual = 27900
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2310.945 ; gain = 0.000 ; free physical = 6460 ; free virtual = 28032
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2320.867 ; gain = 0.000 ; free physical = 6454 ; free virtual = 28035
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2310.945 ; gain = 0.000 ; free physical = 6505 ; free virtual = 28078
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2376.887 ; gain = 0.000 ; free physical = 6491 ; free virtual = 28073
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: a11f55c0
+Synth Design complete | Checksum: 121f9a40
 INFO: [Common 17-83] Releasing license: Synthesis
-38 Infos, 74 Warnings, 0 Critical Warnings and 0 Errors encountered.
+38 Infos, 14 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:26 . Memory (MB): peak = 2310.945 ; gain = 905.703 ; free physical = 6506 ; free virtual = 28079
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1739.305; main = 1529.089; forked = 269.607
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3202.242; main = 2310.941; forked = 918.113
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2334.949 ; gain = 0.000 ; free physical = 6506 ; free virtual = 28079
+synth_design: Time (s): cpu = 00:00:26 ; elapsed = 00:00:25 . Memory (MB): peak = 2376.887 ; gain = 906.254 ; free physical = 6494 ; free virtual = 28076
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1542.093; main = 1542.093; forked = 269.590
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3048.145; main = 2376.891; forked = 918.113
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2400.898 ; gain = 0.000 ; free physical = 6494 ; free virtual = 28075
 INFO: [Common 17-1381] The checkpoint '/home/mike/Desktop/work/fpga_u2_stopwatch/4_vivado/fpga_u2_stopwatch/fpga_u2_stopwatch.runs/synth_1/stop_watch.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file stop_watch_utilization_synth.rpt -pb stop_watch_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Oct  1 18:49:16 2025...
+INFO: [Common 17-206] Exiting Vivado at Wed Oct  1 19:09:25 2025...

@@ -3,8 +3,8 @@
 # SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Wed Oct  1 18:49:27 2025
-# Process ID         : 23502
+# Start of session at: Wed Oct  1 19:09:37 2025
+# Process ID         : 35405
 # Current directory  : /home/mike/Desktop/work/fpga_u2_stopwatch/4_vivado/fpga_u2_stopwatch/fpga_u2_stopwatch.runs/impl_1
 # Command line       : vivado -log stop_watch.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source stop_watch.tcl -notrace
 # Log file           : /home/mike/Desktop/work/fpga_u2_stopwatch/4_vivado/fpga_u2_stopwatch/fpga_u2_stopwatch.runs/impl_1/stop_watch.vdi
@@ -13,12 +13,12 @@
 # Platform           : Ubuntu
 # Operating System   : Ubuntu 24.04.2 LTS
 # Processor Detail   : AMD Ryzen 9 3900X 12-Core Processor
-# CPU Frequency      : 2200.000 MHz
+# CPU Frequency      : 4241.944 MHz
 # CPU Physical cores : 12
 # CPU Logical cores  : 24
 # Host memory        : 16650 MB
 # Swap memory        : 18924 MB
 # Total Virtual      : 35575 MB
-# Available Virtual  : 30712 MB
+# Available Virtual  : 30704 MB
 #-----------------------------------------------------------
 source stop_watch.tcl -notrace
