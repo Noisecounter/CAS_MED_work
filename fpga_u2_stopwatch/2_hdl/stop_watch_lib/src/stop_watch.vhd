@@ -68,6 +68,9 @@ U3: entity work.control
 U4: entity work.count_show_display
     port map (  clk             => clk,
                 reset_n         => reset_n,
+                run             => run,
+                lap             => lap,
+                init            => init,
                 enable_0        => p100hz
             );            
                         
