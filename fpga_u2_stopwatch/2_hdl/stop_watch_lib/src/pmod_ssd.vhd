@@ -5,10 +5,14 @@ library ieee;
     use ieee.std_logic_1164.all;
     use ieee.numeric_std.all;
 
+use work.stop_watch_pkg.all;
+
 entity pmod_ssd is
+    
     generic (
-        g_clk_per_digit : positive := 2
-    );
+        g_clk_per_digit : positive
+            );
+    
     port (
         reset_n     : in  std_ulogic;
         clk         : in  std_ulogic;
