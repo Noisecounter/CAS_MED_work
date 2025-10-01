@@ -39,7 +39,8 @@ U1: entity work.count1digit
                 lap             => lap,
                 run             => run,
                 init            => init,
-                digit           => c_digit_lo
+                digit           => c_digit_lo,
+                carry_out       => enable_1
             );
             
 U2: entity work.count1digit
@@ -49,7 +50,8 @@ U2: entity work.count1digit
                 lap             => lap,
                 run             => run,
                 init            => init,
-                digit           => c_digit_hi             
+                digit           => c_digit_hi,
+                carry_out       => enable_2             
             );
             
 U3: entity work.count1digit
@@ -59,7 +61,8 @@ U3: entity work.count1digit
                 lap             => lap,
                 run             => run,
                 init            => init,
-                digit           => s_digit_lo
+                digit           => s_digit_lo,
+                carry_out       => enable_3
             );
             
 U4: entity work.count1digit

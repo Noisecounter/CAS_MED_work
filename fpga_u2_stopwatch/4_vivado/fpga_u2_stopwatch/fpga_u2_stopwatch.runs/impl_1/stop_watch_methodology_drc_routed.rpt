@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
-| Date         : Wed Oct  1 19:10:06 2025
+| Date         : Wed Oct  1 19:41:29 2025
 | Host         : mike-NH5xAx running 64-bit Ubuntu 24.04.2 LTS
 | Command      : report_methodology -file stop_watch_methodology_drc_routed.rpt -pb stop_watch_methodology_drc_routed.pb -rpx stop_watch_methodology_drc_routed.rpx
 | Design       : stop_watch
@@ -23,21 +23,56 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max checks: <unlimited>
-             Checks found: 2
+             Checks found: 9
 +-----------+----------+-------------------------------+--------+
 | Rule      | Severity | Description                   | Checks |
 +-----------+----------+-------------------------------+--------+
-| TIMING-18 | Warning  | Missing input or output delay | 2      |
+| TIMING-18 | Warning  | Missing input or output delay | 9      |
 +-----------+----------+-------------------------------+--------+
 
 2. REPORT DETAILS
 -----------------
 TIMING-18#1 Warning
 Missing input or output delay  
-An output delay is missing on c_digit_sel relative to the rising and/or falling clock edge(s) of clk.
+An output delay is missing on c_digit[0] relative to the rising and/or falling clock edge(s) of clk.
 Related violations: <none>
 
 TIMING-18#2 Warning
+Missing input or output delay  
+An output delay is missing on c_digit[1] relative to the rising and/or falling clock edge(s) of clk.
+Related violations: <none>
+
+TIMING-18#3 Warning
+Missing input or output delay  
+An output delay is missing on c_digit[2] relative to the rising and/or falling clock edge(s) of clk.
+Related violations: <none>
+
+TIMING-18#4 Warning
+Missing input or output delay  
+An output delay is missing on c_digit[3] relative to the rising and/or falling clock edge(s) of clk.
+Related violations: <none>
+
+TIMING-18#5 Warning
+Missing input or output delay  
+An output delay is missing on c_digit[4] relative to the rising and/or falling clock edge(s) of clk.
+Related violations: <none>
+
+TIMING-18#6 Warning
+Missing input or output delay  
+An output delay is missing on c_digit[5] relative to the rising and/or falling clock edge(s) of clk.
+Related violations: <none>
+
+TIMING-18#7 Warning
+Missing input or output delay  
+An output delay is missing on c_digit[6] relative to the rising and/or falling clock edge(s) of clk.
+Related violations: <none>
+
+TIMING-18#8 Warning
+Missing input or output delay  
+An output delay is missing on c_digit_sel relative to the rising and/or falling clock edge(s) of clk.
+Related violations: <none>
+
+TIMING-18#9 Warning
 Missing input or output delay  
 An output delay is missing on s_digit_sel relative to the rising and/or falling clock edge(s) of clk.
 Related violations: <none>
