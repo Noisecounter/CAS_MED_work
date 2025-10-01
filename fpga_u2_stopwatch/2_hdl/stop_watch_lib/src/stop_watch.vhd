@@ -15,9 +15,9 @@ entity stop_watch is
             reset_n     : in std_ulogic;
             start_stop  : in std_ulogic;
             lap_init    : in std_ulogic;
-            s_digit_sel : out std_ulogic_vector (6 downto 0);
+            s_digit_sel : out std_ulogic;
             s_digit     : out std_ulogic_vector (6 downto 0);
-            c_digit_sel : out std_ulogic_vector (6 downto 0);
+            c_digit_sel : out std_ulogic;
             c_digit     : out std_ulogic_vector (6 downto 0);
             led0        : out std_ulogic
             );
@@ -83,14 +83,18 @@ U5: entity work.pmod_ssd
     port map (  clk             => clk,
                 reset_n         => reset_n,
                 digit_hi        => s_digit_hi,
-                digit_lo        => s_digit_lo
+                digit_lo        => s_digit_lo,
+                pmod_digit      => s_digit,
+                pmod_sel        => s_digit_sel
             );
             
 U6: entity work.pmod_ssd
     port map (  clk             => clk,
                 reset_n         => reset_n,
                 digit_hi        => c_digit_hi,
-                digit_lo        => c_digit_lo
+                digit_lo        => c_digit_lo,
+                pmod_digit      => c_digit,
+                pmod_sel        => c_digit_sel
             );                        
                         
 end structural;
