@@ -33,6 +33,11 @@ signal p100hz       : std_logic;            -- 1 Hz from prescaler
 signal run          : std_logic;            -- run from control
 signal lap          : std_ulogic;           -- lap from control
 signal init         : std_ulogic;           -- init from control
+signal c_digit_lo   : std_ulogic_vector (6 downto 0);   -- 7-segment 1/100 s value output
+signal c_digit_hi   : std_ulogic_vector (6 downto 0);   -- 7-segment 1/10 s value output
+signal s_digit_lo   : std_ulogic_vector (6 downto 0);   -- 7-segment 1 s value output
+signal s_digit_hi   : std_ulogic_vector (6 downto 0);    -- 7-segment 10 s value output
+
 
 begin
 
@@ -72,6 +77,20 @@ U4: entity work.count_show_display
                 lap             => lap,
                 init            => init,
                 enable_0        => p100hz
-            );            
+            );
+            
+U5: entity work.pmod_ssd
+    port map (  clk             => clk,
+                reset_n         => reset_n,
+                digit_hi        => s_digit_hi,
+                digit_lo        => s_digit_lo
+            );
+            
+U6: entity work.pmod_ssd
+    port map (  clk             => clk,
+                reset_n         => reset_n,
+                digit_hi        => c_digit_hi,
+                digit_lo        => c_digit_lo
+            );                        
                         
 end structural;

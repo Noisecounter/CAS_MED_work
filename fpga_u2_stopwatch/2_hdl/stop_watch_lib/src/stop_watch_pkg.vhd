@@ -15,7 +15,7 @@ PACKAGE stop_watch_pkg IS
     CONSTANT c_max_value_syn    : digit_array_t := (5,9,9,9);                     -- Wertebereich der einzelnen Digits f. Synthese
     CONSTANT c_max_value_sim    : digit_array_t := (2,2,2,2);                     -- Wertebereich der einzelnen Digits f. Simulation
     
-    constant g_clk_per_digit    : positive := 2;
+    constant g_clk_per_digit    : positive := 125;
     
     function f_select1 (g_sim : boolean; c_max1_sim : natural; c_max1_syn: natural) return natural;
     function f_select2 (g_sim : boolean; c_max_value_sim : digit_array_t; c_max_value_syn : digit_array_t) return digit_array_t;

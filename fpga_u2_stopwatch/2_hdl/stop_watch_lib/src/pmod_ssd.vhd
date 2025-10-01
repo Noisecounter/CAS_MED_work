@@ -10,7 +10,7 @@ use work.stop_watch_pkg.all;
 entity pmod_ssd is
     
     generic (
-        g_clk_per_digit : positive
+        g_clk_per_digit : positive :=2
             );
     
     port (
