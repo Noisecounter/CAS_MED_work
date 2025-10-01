@@ -1,15 +1,13 @@
 [N
-5
+4
 1
 68 /home/mike/Desktop/work/fpga_u2_stopwatch/3_questasim/stop_watch_lib
-4
-6 g_max1
-5
-6 g_max2
 2
-9 prescaler
+18 count_show_display
 3
-3 rtl
+10 structural
+4
+6 g_high
 ]
 [G
 1
@@ -17,23 +15,9 @@
 3
 1
 4
-1
-0
-124999
-0
-0 0
 0
 0
-]
-[G
-1
-2
 3
-1
-5
-1
-0
-9
 0
 0 0
 0

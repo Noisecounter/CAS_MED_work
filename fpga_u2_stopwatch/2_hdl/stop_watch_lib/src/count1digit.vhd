@@ -4,7 +4,7 @@ LIBRARY ieee;
 
 entity count1digit is
     generic(
-        g_high : integer := 7                                   -- Generic integer value
+        g_high : integer := 9                                   -- Generic integer value
     );
 
 

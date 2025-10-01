@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1759340415" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/stop_watch.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1759350805" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/stop_watch.dcp">
   <File Type="VDS-TIMINGSUMMARY" Name="stop_watch_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="stop_watch.dcp"/>
   <File Type="RDS-UTIL-PB" Name="stop_watch_utilization_synth.pb"/>
@@ -84,6 +84,8 @@
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedInSteps" Val="synth_1"/>
+        <Attr Name="UsedInSteps" Val="synth_1_copy_2"/>
+        <Attr Name="UsedInSteps" Val="synth_1_copy_3"/>
         <Attr Name="AutoDcp" Val="1"/>
       </FileInfo>
     </File>
@@ -92,7 +94,9 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024">
+      <Desc>Vivado Synthesis Defaults</Desc>
+    </StratHandle>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

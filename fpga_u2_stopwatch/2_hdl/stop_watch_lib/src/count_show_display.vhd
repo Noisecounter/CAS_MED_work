@@ -25,6 +25,7 @@ end count_show_display;
 
 architecture structural of count_show_display is
 
+signal carry_out    : std_ulogic;           -- carry_out from count1digit
 signal enable_1     : std_ulogic;           -- carry over to the next digit
 signal enable_2     : std_ulogic;           -- carry over to the next digit
 signal enable_3     : std_ulogic;           -- carry over to the next digit
