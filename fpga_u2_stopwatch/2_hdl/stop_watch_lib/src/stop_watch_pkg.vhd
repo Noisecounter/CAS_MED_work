@@ -4,7 +4,7 @@ USE ieee.std_logic_1164.ALL;
 PACKAGE stop_watch_pkg IS
     
     CONSTANT c_max1_syn         : natural := 124999;                              -- Teilt 125 MHz in 1 kHz (Prescaler)
-    CONSTANT c_max2_syn         : natural := 999;                                   -- Teilt 1 kHz in 100 Hz (Prescaler)
+    CONSTANT c_max2_syn         : natural := 9;                                   -- Teilt 1 kHz in 100 Hz (Prescaler)
 
     CONSTANT c_max1_sim         : natural := 4;                                   -- Teiler für Simulation (Prescaler)
     CONSTANT c_max2_sim         : natural := 4;                                   -- Teiler für Simulation (Prescaler)

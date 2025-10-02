@@ -52,8 +52,8 @@ begin
     begin
     
         if rising_edge (clk) then
+            carry_out <= '0';                                   -- Port carry_out wird auf 0 gesetzt
             if run = '1' and enable ='1' then
-                carry_out <= '0';                               -- Port Übertrag wird auf 0 gesetzt
                     if  counter = g_high then                   -- Wenn counter g_high erreicht
                         counter <= 0;                           -- setze counter 0
                         carry_out <= '1';                       -- Port Übertrag 1

@@ -1,15 +1,13 @@
 m255
 K4
 z2
-Z0 !s12c _opt2
+Z0 !s12c _opt
 Z1 !s99 nomlopt
-Z2 !s12c _opt
+Z2 !s12c _opt1
 R1
-R0
+Z3 !s12c _opt2
 R1
-Z3 !s12c _opt1
-R1
-R2
+R3
 R1
 R0
 R1
@@ -28,6 +26,14 @@ R1
 R3
 R1
 R2
+R1
+R0
+R1
+R3
+R1
+R2
+R1
+R0
 R1
 !s11e vcom 2023.3 2023.07, Jul 17 2023
 13
@@ -38,10 +44,10 @@ R1
 cModel Technology
 Z4 d/home/mike/Desktop/work/fpga_u2_stopwatch/3_questasim
 T_opt
-!s110 1759349537
-VF<2z8n]E8Y88M_iND:79a1
-04 9 3 work condition rtl 1
-=1-000ae431a4f1-68dd8b21-9de36-34ebb
+!s110 1759381302
+VCfP;jJ1EPe6NG]e^4?J^k2
+04 11 3 work count1digit rtl 1
+=1-000ae431a4f1-68de0736-44355-6b30
 R1
 Z5 !s12b OEM100
 Z6 !s124 OEM100
@@ -49,12 +55,11 @@ Z7 o-quiet -auto_acc_if_foreign -work stop_watch_lib
 Z8 tCvgOpt 0
 n@_opt
 Z9 OL;O;2023.3;77
-R4
 T_opt1
-!s110 1759347481
-VU2UZHi[[N1f@MS04k6ijb1
-04 10 10 work stop_watch structural 1
-=1-000ae431a4f1-68dd8319-659ba-29619
+!s110 1759380732
+V?P5]:8D>7GTe]JgR_chaE0
+04 9 3 work prescaler rtl 1
+=1-000ae431a4f1-68de04fc-c4932-65e4
 R1
 R5
 R6
@@ -64,10 +69,10 @@ n@_opt1
 R9
 R4
 T_opt2
-!s110 1759349551
-VbnzX^:AFPbddlOWg03;Xn0
+!s110 1759380396
+VL:lcz[^[QZIlc223OE=a]2
 04 18 10 work count_show_display structural 1
-=1-000ae431a4f1-68dd8b2f-42f50-34f7e
+=1-000ae431a4f1-68de03ac-54523-6226
 R1
 R5
 R6
@@ -81,7 +86,7 @@ Z10 w1758362820
 Z11 DPx4 ieee 11 numeric_std 0 22 F8@]:i<mFK7<TjIzKcTGi0
 Z12 DPx3 std 6 textio 0 22 LS[?81n5ZHWBI9JkBZTV<2
 Z13 DPx4 ieee 14 std_logic_1164 0 22 6<US`=mgl_dFdCEFF7J=m1
-!i122 36
+!i122 56
 R4
 Z14 8../2_hdl/stop_watch_lib/src/condition.vhd
 Z15 F../2_hdl/stop_watch_lib/src/condition.vhd
@@ -91,9 +96,9 @@ VjU]h^UH3?3`ZVWJ<32gM]1
 !s100 ]`R;M=`[MPLTb3X@^?W@d2
 Z16 OL;C;2023.3;77
 32
-Z17 !s110 1759347291
+Z17 !s110 1759380365
 !i10b 1
-Z18 !s108 1759347291.000000
+Z18 !s108 1759380365.000000
 Z19 !s90 -reportprogress|300|-work|stop_watch_lib|../2_hdl/stop_watch_lib/src/condition.vhd|
 Z20 !s107 ../2_hdl/stop_watch_lib/src/condition.vhd|
 !i113 0
@@ -104,7 +109,7 @@ R11
 R12
 R13
 Z23 DEx4 work 9 condition 0 22 jU]h^UH3?3`ZVWJ<32gM]1
-!i122 36
+!i122 56
 l31
 L21 91
 V:I7Jg7c_l9L5j3Qd5FOXh1
@@ -124,7 +129,7 @@ Z24 w1759258600
 R11
 R12
 R13
-!i122 37
+!i122 57
 R4
 Z25 8../2_hdl/stop_watch_lib/src/control.vhd
 Z26 F../2_hdl/stop_watch_lib/src/control.vhd
@@ -134,11 +139,11 @@ VbFPLe94k6=BY2C^QG;:=C2
 !s100 flP4:eZGm`9=EC]IJAM=A0
 R16
 32
-R17
+Z27 !s110 1759380366
 !i10b 1
 R18
-Z27 !s90 -reportprogress|300|-work|stop_watch_lib|../2_hdl/stop_watch_lib/src/control.vhd|
-Z28 !s107 ../2_hdl/stop_watch_lib/src/control.vhd|
+Z28 !s90 -reportprogress|300|-work|stop_watch_lib|../2_hdl/stop_watch_lib/src/control.vhd|
+Z29 !s107 ../2_hdl/stop_watch_lib/src/control.vhd|
 !i113 0
 R21
 R22
@@ -146,42 +151,42 @@ Afsm
 R11
 R12
 R13
-Z29 DEx4 work 7 control 0 22 bFPLe94k6=BY2C^QG;:=C2
-!i122 37
+Z30 DEx4 work 7 control 0 22 bFPLe94k6=BY2C^QG;:=C2
+!i122 57
 l25
 L19 61
 VMcCf_Q47U:5SGD4m@0fQ33
 !s100 GV9MozgYGh82Q4HKG_ie^3
 R16
 32
-R17
+R27
 !i10b 1
 R18
-R27
 R28
+R29
 !i113 0
 R21
 R22
 Ecount1digit
-Z30 w1759256610
+Z31 w1759350794
 R11
 R12
 R13
-!i122 39
+!i122 59
 R4
-Z31 8../2_hdl/stop_watch_lib/src/count1digit.vhd
-Z32 F../2_hdl/stop_watch_lib/src/count1digit.vhd
+Z32 8../2_hdl/stop_watch_lib/src/count1digit.vhd
+Z33 F../2_hdl/stop_watch_lib/src/count1digit.vhd
 l0
 L5 1
-VhnkO8?ULi3LlM[]i9GC=U0
-!s100 <`WMEL<ZcM<N9HGZ6Z<jB0
+VOhg[7TGf8=a95TkHDK?a00
+!s100 U3iS^E21YHHInX=;zOBg43
 R16
 32
-Z33 !s110 1759347292
+R27
 !i10b 1
-R18
-Z34 !s90 -reportprogress|300|-work|stop_watch_lib|../2_hdl/stop_watch_lib/src/count1digit.vhd|
-Z35 !s107 ../2_hdl/stop_watch_lib/src/count1digit.vhd|
+Z34 !s108 1759380366.000000
+Z35 !s90 -reportprogress|300|-work|stop_watch_lib|../2_hdl/stop_watch_lib/src/count1digit.vhd|
+Z36 !s107 ../2_hdl/stop_watch_lib/src/count1digit.vhd|
 !i113 0
 R21
 R22
@@ -189,29 +194,29 @@ Artl
 R11
 R12
 R13
-Z36 DEx4 work 11 count1digit 0 22 hnkO8?ULi3LlM[]i9GC=U0
-!i122 39
+DEx4 work 11 count1digit 0 22 Ohg[7TGf8=a95TkHDK?a00
+!i122 59
 l43
 L25 81
 V5O^PzDgd9bVH_[46dlUFI0
 !s100 X]k0JWIk2b:D2^lGAKb7^3
 R16
 32
-R33
+R27
 !i10b 1
-R18
 R34
 R35
+R36
 !i113 0
 R21
 R22
 Ecount_show_display
-Z37 w1759342577
-Z38 DPx4 work 14 stop_watch_pkg 0 22 0=fg;l>=<@EV1>A[VKWHb2
+Z37 w1759378993
+Z38 DPx4 work 14 stop_watch_pkg 0 22 l0n40Jo97C[lcF>??ZDXj1
 R11
 R12
 R13
-!i122 38
+!i122 58
 R4
 Z39 8../2_hdl/stop_watch_lib/src/count_show_display.vhd
 Z40 F../2_hdl/stop_watch_lib/src/count_show_display.vhd
@@ -221,57 +226,57 @@ V@8XJUHm]2UHolUgm7^Hk53
 !s100 Lh1V`MhB??Im1BL0Ca`@C0
 R16
 32
-R17
+R27
 !i10b 1
-R18
+R34
 Z41 !s90 -reportprogress|300|-work|stop_watch_lib|../2_hdl/stop_watch_lib/src/count_show_display.vhd|
 Z42 !s107 ../2_hdl/stop_watch_lib/src/count_show_display.vhd|
 !i113 0
 R21
 R22
 Astructural
-R36
+DEx4 work 11 count1digit 0 22 hnkO8?ULi3LlM[]i9GC=U0
 R38
 R11
 R12
 R13
 Z43 DEx4 work 18 count_show_display 0 22 @8XJUHm]2UHolUgm7^Hk53
-!i122 38
+!i122 58
 l34
 L26 54
-V`flFhnmgncjTZcGz5Jkk90
-!s100 AN`Sc]ihM[_@aW2ojlfh91
+V65DNiGd8_<Oa97In12TJY3
+!s100 NHj@PRSFIi4?H]?:dN06T2
 R16
 32
-R17
+R27
 !i10b 1
-R18
+R34
 R41
 R42
 !i113 0
 R21
 R22
 Epmod_ssd
-Z44 w1759332715
+Z44 w1759348606
 R38
 R11
 R12
 R13
-!i122 40
+!i122 60
 R4
 Z45 8../2_hdl/stop_watch_lib/src/pmod_ssd.vhd
 Z46 F../2_hdl/stop_watch_lib/src/pmod_ssd.vhd
 l0
 L10 1
-VBKj27FJI@d>k8ghk:zo3Y1
-!s100 8EcSOL[m[o[B3eg6hB28e3
+V[nP?l_T@eDFOFD1BQ@1`82
+!s100 gziRoOhKW>SVb1_@5fDBm3
 R16
 32
-R33
+R27
 !i10b 1
-Z47 !s108 1759347292.000000
-Z48 !s90 -reportprogress|300|-work|stop_watch_lib|../2_hdl/stop_watch_lib/src/pmod_ssd.vhd|
-Z49 !s107 ../2_hdl/stop_watch_lib/src/pmod_ssd.vhd|
+R34
+Z47 !s90 -reportprogress|300|-work|stop_watch_lib|../2_hdl/stop_watch_lib/src/pmod_ssd.vhd|
+Z48 !s107 ../2_hdl/stop_watch_lib/src/pmod_ssd.vhd|
 !i113 0
 R21
 R22
@@ -280,29 +285,29 @@ R38
 R11
 R12
 R13
-Z50 DEx4 work 8 pmod_ssd 0 22 BKj27FJI@d>k8ghk:zo3Y1
-!i122 40
+Z49 DEx4 work 8 pmod_ssd 0 22 [nP?l_T@eDFOFD1BQ@1`82
+!i122 60
 l32
 L27 39
 Vh@]KLWhUAF_Iol0nY00FA2
 !s100 ^WIldm?OQUoABACRRecW^3
 R16
 32
-R33
+R27
 !i10b 1
+R34
 R47
 R48
-R49
 !i113 0
 R21
 R22
 Eprescaler
-R30
+Z50 w1759256610
 R38
 R11
 R12
 R13
-!i122 35
+!i122 55
 R4
 Z51 8../2_hdl/stop_watch_lib/src/prescaler.vhd
 Z52 F../2_hdl/stop_watch_lib/src/prescaler.vhd
@@ -326,7 +331,7 @@ R11
 R12
 R13
 Z55 DEx4 work 9 prescaler 0 22 1QTzBZ19<lO^k7OQA5zhd3
-!i122 35
+!i122 55
 l37
 L27 55
 VEKP?J<X:oPbi]J<L>lQa41
@@ -343,32 +348,32 @@ R21
 R22
 Estop_watch
 Z56 w1759344446
-Z57 DPx4 work 14 stop_watch_pkg 0 22 l0n40Jo97C[lcF>??ZDXj1
+R38
 R11
 R12
 R13
-!i122 46
+!i122 61
 R4
-Z58 8../2_hdl/stop_watch_lib/src/stop_watch.vhd
-Z59 F../2_hdl/stop_watch_lib/src/stop_watch.vhd
+Z57 8../2_hdl/stop_watch_lib/src/stop_watch.vhd
+Z58 F../2_hdl/stop_watch_lib/src/stop_watch.vhd
 l0
 L7 1
 Vajzjz:9FZ_UFl;YHT:25B0
 !s100 TVa7cLi_hJn_YL1Yi31P00
 R16
 32
-Z60 !s110 1759349585
+R27
 !i10b 1
-Z61 !s108 1759349585.000000
-Z62 !s90 -reportprogress|300|-work|stop_watch_lib|../2_hdl/stop_watch_lib/src/stop_watch.vhd|
-Z63 !s107 ../2_hdl/stop_watch_lib/src/stop_watch.vhd|
+R34
+Z59 !s90 -reportprogress|300|-work|stop_watch_lib|../2_hdl/stop_watch_lib/src/stop_watch.vhd|
+Z60 !s107 ../2_hdl/stop_watch_lib/src/stop_watch.vhd|
 !i113 0
 R21
 R22
 Astructural
-R50
+R49
 R43
-R29
+R30
 R23
 R55
 R38
@@ -376,29 +381,29 @@ R11
 R12
 R13
 DEx4 work 10 stop_watch 0 22 ajzjz:9FZ_UFl;YHT:25B0
-!i122 34
+!i122 61
 l42
 L27 78
 Vz892W5ZWiNbWGg]XGFJ:41
 !s100 ZVE67Jm_A:AY;:[ZAMiRR0
 R16
 32
-R17
+R27
 !i10b 1
-R18
-R62
-R63
+R34
+R59
+R60
 !i113 0
 R21
 R22
 Pstop_watch_pkg
 R12
 R13
-!i122 45
-Z64 w1759348891
+!i122 54
+Z61 w1759348891
 R4
-Z65 8../2_hdl/stop_watch_lib/src/stop_watch_pkg.vhd
-Z66 F../2_hdl/stop_watch_lib/src/stop_watch_pkg.vhd
+Z62 8../2_hdl/stop_watch_lib/src/stop_watch_pkg.vhd
+Z63 F../2_hdl/stop_watch_lib/src/stop_watch_pkg.vhd
 l0
 L4 20
 Vl0n40Jo97C[lcF>??ZDXj1
@@ -406,30 +411,30 @@ Vl0n40Jo97C[lcF>??ZDXj1
 R16
 32
 b1
-R60
+R17
 !i10b 1
-R61
-Z67 !s90 -reportprogress|300|-work|stop_watch_lib|../2_hdl/stop_watch_lib/src/stop_watch_pkg.vhd|
-Z68 !s107 ../2_hdl/stop_watch_lib/src/stop_watch_pkg.vhd|
+R18
+Z64 !s90 -reportprogress|300|-work|stop_watch_lib|../2_hdl/stop_watch_lib/src/stop_watch_pkg.vhd|
+Z65 !s107 ../2_hdl/stop_watch_lib/src/stop_watch_pkg.vhd|
 !i113 0
 R21
 R22
 Bbody
-R57
+R38
 R12
 R13
-!i122 45
+!i122 54
 l0
 L25 21
 VJGQf<;nA@CG]Qj9Tn?[7J2
 !s100 gY4TXa:3Ye;fWEB]@IND>0
 R16
 32
-R60
+R17
 !i10b 1
-R61
-R67
-R68
+R18
+R64
+R65
 !i113 0
 R21
 R22
