@@ -3,9 +3,10 @@ LIBRARY ieee;
     USE ieee.numeric_std.ALL;
 
 entity count1digit is
+
     generic(
-        g_high : integer := 9                                   -- Generic integer value
-    );
+        g_high : integer := 9                                   -- Generic for max counter value
+            );
 
 
     port(
@@ -56,7 +57,7 @@ begin
             if run = '1' and enable ='1' then
                     if  counter = g_high then                   -- Wenn counter g_high erreicht
                         counter <= 0;                           -- setze counter 0
-                        carry_out <= '1';                       -- Port Übertrag 1
+                        carry_out <= '1';                       -- setze Übertrag 1
                         else
                         counter <= counter + 1;                 -- Counter wird bei jedem Durchgang (enable) um 1 erhöht
                     end if;

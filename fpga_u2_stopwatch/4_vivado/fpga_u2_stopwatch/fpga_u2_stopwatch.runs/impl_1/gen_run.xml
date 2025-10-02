@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z010clg400-1" LaunchTime="1759400835">
+<GenRun Id="impl_1" LaunchPart="xc7z010clg400-1" LaunchTime="1759417682">
   <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-RQS" Name="stop_watch_postroute_physopted.rqs"/>
   <File Type="ROUTE-RQS" Name="stop_watch_routed.rqs"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="BG-BGN" Name="stop_watch.bgn"/>
+  <File Type="BITSTR-SYSDEF" Name="stop_watch.sysdef"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="stop_watch.ltx"/>
   <File Type="RBD_FILE" Name="stop_watch.rbd"/>
   <File Type="NPI_FILE" Name="stop_watch.npi"/>
   <File Type="RNPI_FILE" Name="stop_watch.rnpi"/>
@@ -10,66 +15,75 @@
   <File Type="RCFI_FILE" Name="stop_watch.rcfi"/>
   <File Type="PL-PDI-FILE" Name="stop_watch_pld.pdi"/>
   <File Type="BOOT-PDI-FILE" Name="stop_watch_boot.pdi"/>
-  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="stop_watch_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="stop_watch_postroute_physopt.dcp"/>
-  <File Type="PHYSOPT-DCP" Name="stop_watch_physopt.dcp"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="stop_watch_postplace_pwropt.dcp"/>
-  <File Type="PWROPT-DCP" Name="stop_watch_pwropt.dcp"/>
-  <File Type="PLACE-DCP" Name="stop_watch_placed.dcp"/>
-  <File Type="OPT-DCP" Name="stop_watch_opt.dcp"/>
-  <File Type="ROUTE-TIMING-PB" Name="stop_watch_timing_summary_routed.pb"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="stop_watch_routed_bb.dcp"/>
-  <File Type="ROUTE-ERROR-DCP" Name="stop_watch_routed_error.dcp"/>
-  <File Type="ROUTE-DCP" Name="stop_watch_routed.dcp"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="stop_watch_incremental_reuse_pre_placed.rpt"/>
-  <File Type="OPT-HWDEF" Name="stop_watch.hwdef"/>
-  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
-  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="stop_watch.ltx"/>
-  <File Type="BITSTR-SYSDEF" Name="stop_watch.sysdef"/>
+  <File Type="RDI-RDI" Name="stop_watch.vdi"/>
+  <File Type="PDI-FILE" Name="stop_watch.pdi"/>
   <File Type="BITSTR-MMI" Name="stop_watch.mmi"/>
   <File Type="BITSTR-BMM" Name="stop_watch_bd.bmm"/>
   <File Type="BITSTR-NKY" Name="stop_watch.nky"/>
   <File Type="BITSTR-RBT" Name="stop_watch.rbt"/>
+  <File Type="BITSTR-MSK" Name="stop_watch.msk"/>
+  <File Type="BG-BIN" Name="stop_watch.bin"/>
   <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
   <File Type="BG-BIT" Name="stop_watch.bit"/>
-  <File Type="PDI-FILE" Name="stop_watch.pdi"/>
-  <File Type="RDI-RDI" Name="stop_watch.vdi"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="stop_watch_timing_summary_routed.rpt"/>
-  <File Type="BG-BIN" Name="stop_watch.bin"/>
-  <File Type="PLACE-IO" Name="stop_watch_io_placed.rpt"/>
-  <File Type="OPT-DRC" Name="stop_watch_drc_opted.rpt"/>
-  <File Type="PLACE-CTRL" Name="stop_watch_control_sets_placed.rpt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="stop_watch_methodology_drc_routed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="stop_watch_utilization_placed.pb"/>
-  <File Type="ROUTE-TIMING-RPX" Name="stop_watch_timing_summary_routed.rpx"/>
-  <File Type="REPORTS-TCL" Name="stop_watch_reports.tcl"/>
-  <File Type="PA-TCL" Name="stop_watch.tcl"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="stop_watch_methodology_drc_routed.pb"/>
-  <File Type="BG-BGN" Name="stop_watch.bgn"/>
-  <File Type="PLACE-UTIL" Name="stop_watch_utilization_placed.rpt"/>
-  <File Type="ROUTE-STATUS" Name="stop_watch_route_status.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="stop_watch_route_status.pb"/>
-  <File Type="BG-DRC" Name="stop_watch.drc"/>
-  <File Type="ROUTE-PWR" Name="stop_watch_power_routed.rpt"/>
-  <File Type="ROUTE-PWR-RPX" Name="stop_watch_power_routed.rpx"/>
-  <File Type="ROUTE-PWR-SUM" Name="stop_watch_power_summary_routed.pb"/>
-  <File Type="ROUTE-DRC" Name="stop_watch_drc_routed.rpt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="stop_watch_methodology_drc_routed.rpx"/>
-  <File Type="ROUTE-DRC-RPX" Name="stop_watch_drc_routed.rpx"/>
-  <File Type="ROUTE-DRC-PB" Name="stop_watch_drc_routed.pb"/>
-  <File Type="ROUTE-SIMILARITY" Name="stop_watch_incremental_reuse_routed.rpt"/>
-  <File Type="ROUTE-CLK" Name="stop_watch_clock_utilization_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW" Name="stop_watch_bus_skew_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW-RPX" Name="stop_watch_bus_skew_routed.rpx"/>
-  <File Type="ROUTE-BUS-SKEW-PB" Name="stop_watch_bus_skew_routed.pb"/>
-  <File Type="BITSTR-MSK" Name="stop_watch.msk"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="stop_watch_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="stop_watch_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="stop_watch_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="stop_watch_bus_skew_postroute_physopted.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="stop_watch_bus_skew_postroute_physopted.rpx"/>
   <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="stop_watch_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="stop_watch_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="stop_watch_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="stop_watch_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="stop_watch_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="stop_watch_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="stop_watch_postroute_physopt.dcp"/>
+  <File Type="BG-DRC" Name="stop_watch.drc"/>
+  <File Type="ROUTE-RQS-PB" Name="stop_watch_rqs_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="stop_watch_bus_skew_routed.rpx"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="stop_watch_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW" Name="stop_watch_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="stop_watch_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-SIMILARITY" Name="stop_watch_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-TIMING-RPX" Name="stop_watch_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-TIMING-PB" Name="stop_watch_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="stop_watch_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="stop_watch_route_status.pb"/>
+  <File Type="ROUTE-STATUS" Name="stop_watch_route_status.rpt"/>
+  <File Type="ROUTE-PWR-RPX" Name="stop_watch_power_routed.rpx"/>
+  <File Type="ROUTE-PWR-SUM" Name="stop_watch_power_summary_routed.pb"/>
+  <File Type="ROUTE-PWR" Name="stop_watch_power_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="stop_watch_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="stop_watch_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="stop_watch_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-RPX" Name="stop_watch_drc_routed.rpx"/>
+  <File Type="ROUTE-DRC-PB" Name="stop_watch_drc_routed.pb"/>
+  <File Type="ROUTE-DRC" Name="stop_watch_drc_routed.rpt"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="stop_watch_routed_bb.dcp"/>
+  <File Type="ROUTE-DCP" Name="stop_watch_routed.dcp"/>
+  <File Type="ROUTE-ERROR-DCP" Name="stop_watch_routed_error.dcp"/>
+  <File Type="PHYSOPT-TIMING" Name="stop_watch_timing_summary_physopted.rpt"/>
+  <File Type="PHYSOPT-DRC" Name="stop_watch_drc_physopted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="stop_watch_physopt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="stop_watch_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="stop_watch_postplace_pwropt.dcp"/>
+  <File Type="PLACE-RQA-PB" Name="stop_watch_rqa_placed.pb"/>
+  <File Type="PLACE-TIMING" Name="stop_watch_timing_summary_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="stop_watch_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="stop_watch_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-CTRL" Name="stop_watch_control_sets_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="stop_watch_utilization_placed.pb"/>
+  <File Type="PLACE-UTIL" Name="stop_watch_utilization_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="stop_watch_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-IO" Name="stop_watch_io_placed.rpt"/>
+  <File Type="PLACE-DCP" Name="stop_watch_placed.dcp"/>
+  <File Type="PWROPT-TIMING" Name="stop_watch_timing_summary_pwropted.rpt"/>
+  <File Type="PWROPT-DRC" Name="stop_watch_drc_pwropted.rpt"/>
+  <File Type="PWROPT-DCP" Name="stop_watch_pwropt.dcp"/>
+  <File Type="OPT-RQA-PB" Name="stop_watch_rqa_opted.pb"/>
+  <File Type="OPT-HWDEF" Name="stop_watch.hwdef"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="stop_watch_methodology_drc_opted.rpt"/>
+  <File Type="OPT-DRC" Name="stop_watch_drc_opted.rpt"/>
+  <File Type="OPT-DCP" Name="stop_watch_opt.dcp"/>
+  <File Type="OPT-TIMING" Name="stop_watch_timing_summary_opted.rpt"/>
+  <File Type="REPORTS-TCL" Name="stop_watch_reports.tcl"/>
+  <File Type="INIT-TIMING" Name="stop_watch_timing_summary_init.rpt"/>
+  <File Type="PA-TCL" Name="stop_watch.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/../../2_hdl/stop_watch_lib/src/condition.vhd">
@@ -165,6 +179,5 @@
     <Step Id="route_design"/>
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
-    <Step Id="write_device_image"/>
   </Strategy>
 </GenRun>

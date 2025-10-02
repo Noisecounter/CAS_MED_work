@@ -3,8 +3,8 @@
 # SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Thu Oct  2 12:28:12 2025
-# Process ID         : 35965
+# Start of session at: Thu Oct  2 17:08:05 2025
+# Process ID         : 16818
 # Current directory  : /home/mike/Desktop/work/fpga_u2_stopwatch/4_vivado/fpga_u2_stopwatch/fpga_u2_stopwatch.runs/synth_1
 # Command line       : vivado -log stop_watch.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source stop_watch.tcl
 # Log file           : /home/mike/Desktop/work/fpga_u2_stopwatch/4_vivado/fpga_u2_stopwatch/fpga_u2_stopwatch.runs/synth_1/stop_watch.vds
@@ -13,16 +13,15 @@
 # Platform           : Ubuntu
 # Operating System   : Ubuntu 24.04.2 LTS
 # Processor Detail   : AMD Ryzen 9 3900X 12-Core Processor
-# CPU Frequency      : 545.529 MHz
+# CPU Frequency      : 4291.645 MHz
 # CPU Physical cores : 12
 # CPU Logical cores  : 24
 # Host memory        : 16650 MB
 # Swap memory        : 18924 MB
 # Total Virtual      : 35575 MB
-# Available Virtual  : 30001 MB
+# Available Virtual  : 32214 MB
 #-----------------------------------------------------------
 source stop_watch.tcl -notrace
-create_project: Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1368.070 ; gain = 0.027 ; free physical = 6451 ; free virtual = 28293
 Command: read_checkpoint -auto_incremental -incremental /home/mike/Desktop/work/fpga_u2_stopwatch/4_vivado/fpga_u2_stopwatch/fpga_u2_stopwatch.srcs/utils_1/imports/synth_1/stop_watch.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from /home/mike/Desktop/work/fpga_u2_stopwatch/4_vivado/fpga_u2_stopwatch/fpga_u2_stopwatch.srcs/utils_1/imports/synth_1/stop_watch.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -35,9 +34,9 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 36338
+INFO: [Synth 8-7075] Helper process launched with PID 16856
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:01:02 ; elapsed = 00:01:05 . Memory (MB): peak = 1884.402 ; gain = 425.832 ; free physical = 5686 ; free virtual = 27538
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1884.406 ; gain = 414.852 ; free physical = 8020 ; free virtual = 29632
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'stop_watch' [/home/mike/Desktop/work/fpga_u2_stopwatch/2_hdl/stop_watch_lib/src/stop_watch.vhd:27]
 	Parameter g_sim bound to: 0 - type: bool 
@@ -47,15 +46,15 @@ INFO: [Synth 8-638] synthesizing module 'condition' [/home/mike/Desktop/work/fpg
 INFO: [Synth 8-256] done synthesizing module 'condition' (0#1) [/home/mike/Desktop/work/fpga_u2_stopwatch/2_hdl/stop_watch_lib/src/condition.vhd:21]
 INFO: [Synth 8-638] synthesizing module 'control' [/home/mike/Desktop/work/fpga_u2_stopwatch/2_hdl/stop_watch_lib/src/control.vhd:19]
 INFO: [Synth 8-256] done synthesizing module 'control' (0#1) [/home/mike/Desktop/work/fpga_u2_stopwatch/2_hdl/stop_watch_lib/src/control.vhd:19]
-INFO: [Synth 8-638] synthesizing module 'count_show_display' [/home/mike/Desktop/work/fpga_u2_stopwatch/2_hdl/stop_watch_lib/src/count_show_display.vhd:27]
+INFO: [Synth 8-638] synthesizing module 'count_show_display' [/home/mike/Desktop/work/fpga_u2_stopwatch/2_hdl/stop_watch_lib/src/count_show_display.vhd:28]
 	Parameter g_sim bound to: 0 - type: bool 
-INFO: [Synth 8-638] synthesizing module 'count1digit' [/home/mike/Desktop/work/fpga_u2_stopwatch/2_hdl/stop_watch_lib/src/count1digit.vhd:25]
+INFO: [Synth 8-638] synthesizing module 'count1digit' [/home/mike/Desktop/work/fpga_u2_stopwatch/2_hdl/stop_watch_lib/src/count1digit.vhd:26]
 	Parameter g_high bound to: 9 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'count1digit' (0#1) [/home/mike/Desktop/work/fpga_u2_stopwatch/2_hdl/stop_watch_lib/src/count1digit.vhd:25]
-INFO: [Synth 8-638] synthesizing module 'count1digit__parameterized0' [/home/mike/Desktop/work/fpga_u2_stopwatch/2_hdl/stop_watch_lib/src/count1digit.vhd:25]
+INFO: [Synth 8-256] done synthesizing module 'count1digit' (0#1) [/home/mike/Desktop/work/fpga_u2_stopwatch/2_hdl/stop_watch_lib/src/count1digit.vhd:26]
+INFO: [Synth 8-638] synthesizing module 'count1digit__parameterized0' [/home/mike/Desktop/work/fpga_u2_stopwatch/2_hdl/stop_watch_lib/src/count1digit.vhd:26]
 	Parameter g_high bound to: 5 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'count1digit__parameterized0' (0#1) [/home/mike/Desktop/work/fpga_u2_stopwatch/2_hdl/stop_watch_lib/src/count1digit.vhd:25]
-INFO: [Synth 8-256] done synthesizing module 'count_show_display' (0#1) [/home/mike/Desktop/work/fpga_u2_stopwatch/2_hdl/stop_watch_lib/src/count_show_display.vhd:27]
+INFO: [Synth 8-256] done synthesizing module 'count1digit__parameterized0' (0#1) [/home/mike/Desktop/work/fpga_u2_stopwatch/2_hdl/stop_watch_lib/src/count1digit.vhd:26]
+INFO: [Synth 8-256] done synthesizing module 'count_show_display' (0#1) [/home/mike/Desktop/work/fpga_u2_stopwatch/2_hdl/stop_watch_lib/src/count_show_display.vhd:28]
 INFO: [Synth 8-638] synthesizing module 'pmod_ssd' [/home/mike/Desktop/work/fpga_u2_stopwatch/2_hdl/stop_watch_lib/src/pmod_ssd.vhd:27]
 INFO: [Synth 8-256] done synthesizing module 'pmod_ssd' (0#1) [/home/mike/Desktop/work/fpga_u2_stopwatch/2_hdl/stop_watch_lib/src/pmod_ssd.vhd:27]
 INFO: [Synth 8-256] done synthesizing module 'stop_watch' (0#1) [/home/mike/Desktop/work/fpga_u2_stopwatch/2_hdl/stop_watch_lib/src/stop_watch.vhd:27]
@@ -64,18 +63,18 @@ WARNING: [Synth 8-7129] Port reset_n in module count1digit__parameterized0 is ei
 WARNING: [Synth 8-7129] Port reset_n in module count1digit is either unconnected or has no load
 WARNING: [Synth 8-7129] Port led0 in module stop_watch is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:01:26 ; elapsed = 00:01:31 . Memory (MB): peak = 1960.371 ; gain = 501.801 ; free physical = 5589 ; free virtual = 27442
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1960.344 ; gain = 490.789 ; free physical = 7946 ; free virtual = 29561
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:27 ; elapsed = 00:01:32 . Memory (MB): peak = 1978.184 ; gain = 519.613 ; free physical = 5591 ; free virtual = 27444
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1975.188 ; gain = 505.633 ; free physical = 7945 ; free virtual = 29560
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:27 ; elapsed = 00:01:32 . Memory (MB): peak = 1978.184 ; gain = 519.613 ; free physical = 5591 ; free virtual = 27444
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1975.188 ; gain = 505.633 ; free physical = 7945 ; free virtual = 29560
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.03 . Memory (MB): peak = 1978.184 ; gain = 0.000 ; free physical = 5591 ; free virtual = 27444
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1975.188 ; gain = 0.000 ; free physical = 7945 ; free virtual = 29560
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -86,28 +85,28 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/stop_watch_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2127.934 ; gain = 0.000 ; free physical = 5586 ; free virtual = 27438
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2126.938 ; gain = 0.000 ; free physical = 7918 ; free virtual = 29549
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2127.934 ; gain = 0.000 ; free physical = 5589 ; free virtual = 27441
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2126.938 ; gain = 0.000 ; free physical = 7918 ; free virtual = 29549
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:03:06 ; elapsed = 00:03:12 . Memory (MB): peak = 2127.934 ; gain = 669.363 ; free physical = 5592 ; free virtual = 27445
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2126.938 ; gain = 657.383 ; free physical = 7942 ; free virtual = 29573
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:03:06 ; elapsed = 00:03:12 . Memory (MB): peak = 2135.938 ; gain = 677.367 ; free physical = 5592 ; free virtual = 27445
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2134.941 ; gain = 665.387 ; free physical = 7942 ; free virtual = 29573
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:03:06 ; elapsed = 00:03:12 . Memory (MB): peak = 2135.938 ; gain = 677.367 ; free physical = 5592 ; free virtual = 27445
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2134.941 ; gain = 665.387 ; free physical = 7942 ; free virtual = 29573
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'control'
 ---------------------------------------------------------------------------------------------------
@@ -119,7 +118,7 @@ INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in modul
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using encoding 'sequential' in module 'control'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:03:11 ; elapsed = 00:03:17 . Memory (MB): peak = 2135.938 ; gain = 677.367 ; free physical = 5598 ; free virtual = 27451
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2134.941 ; gain = 665.387 ; free physical = 7932 ; free virtual = 29564
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -157,25 +156,25 @@ Start Cross Boundary and Area Optimization
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 WARNING: [Synth 8-7129] Port led0 in module stop_watch is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:03:39 ; elapsed = 00:03:46 . Memory (MB): peak = 2135.938 ; gain = 677.367 ; free physical = 5571 ; free virtual = 27428
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2134.941 ; gain = 665.387 ; free physical = 7922 ; free virtual = 29559
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:05:37 ; elapsed = 00:05:45 . Memory (MB): peak = 2151.938 ; gain = 693.367 ; free physical = 5486 ; free virtual = 27343
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2152.941 ; gain = 683.387 ; free physical = 7852 ; free virtual = 29497
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:05:38 ; elapsed = 00:05:46 . Memory (MB): peak = 2180.984 ; gain = 722.414 ; free physical = 5461 ; free virtual = 27319
+Finished Timing Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 2181.988 ; gain = 712.434 ; free physical = 7821 ; free virtual = 29466
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:05:39 ; elapsed = 00:05:47 . Memory (MB): peak = 2180.984 ; gain = 722.414 ; free physical = 5461 ; free virtual = 27319
+Finished Technology Mapping : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 2181.988 ; gain = 712.434 ; free physical = 7821 ; free virtual = 29466
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -193,37 +192,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:06:35 ; elapsed = 00:06:44 . Memory (MB): peak = 2324.797 ; gain = 866.227 ; free physical = 5338 ; free virtual = 27195
+Finished IO Insertion : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2324.801 ; gain = 855.246 ; free physical = 7697 ; free virtual = 29342
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:06:35 ; elapsed = 00:06:44 . Memory (MB): peak = 2324.797 ; gain = 866.227 ; free physical = 5338 ; free virtual = 27195
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2324.801 ; gain = 855.246 ; free physical = 7697 ; free virtual = 29342
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:06:35 ; elapsed = 00:06:44 . Memory (MB): peak = 2324.797 ; gain = 866.227 ; free physical = 5338 ; free virtual = 27195
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2324.801 ; gain = 855.246 ; free physical = 7697 ; free virtual = 29342
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:06:35 ; elapsed = 00:06:44 . Memory (MB): peak = 2324.797 ; gain = 866.227 ; free physical = 5338 ; free virtual = 27195
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2324.801 ; gain = 855.246 ; free physical = 7697 ; free virtual = 29342
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:06:35 ; elapsed = 00:06:44 . Memory (MB): peak = 2324.797 ; gain = 866.227 ; free physical = 5338 ; free virtual = 27195
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2324.801 ; gain = 855.246 ; free physical = 7697 ; free virtual = 29342
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:06:35 ; elapsed = 00:06:44 . Memory (MB): peak = 2324.797 ; gain = 866.227 ; free physical = 5338 ; free virtual = 27195
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2324.801 ; gain = 855.246 ; free physical = 7697 ; free virtual = 29342
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -254,18 +253,18 @@ Report Cell Usage:
 |13    |OBUFT  |     1|
 +------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:06:35 ; elapsed = 00:06:44 . Memory (MB): peak = 2324.797 ; gain = 866.227 ; free physical = 5338 ; free virtual = 27195
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2324.801 ; gain = 855.246 ; free physical = 7697 ; free virtual = 29342
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:06:05 ; elapsed = 00:06:14 . Memory (MB): peak = 2324.797 ; gain = 716.477 ; free physical = 5333 ; free virtual = 27191
-Synthesis Optimization Complete : Time (s): cpu = 00:06:36 ; elapsed = 00:06:45 . Memory (MB): peak = 2324.805 ; gain = 866.227 ; free physical = 5333 ; free virtual = 27191
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2324.801 ; gain = 703.496 ; free physical = 7698 ; free virtual = 29343
+Synthesis Optimization Complete : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2324.809 ; gain = 855.246 ; free physical = 7698 ; free virtual = 29343
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2324.805 ; gain = 0.000 ; free physical = 5499 ; free virtual = 27357
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2324.809 ; gain = 0.000 ; free physical = 7853 ; free virtual = 29500
 INFO: [Netlist 29-17] Analyzing 5 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Netlist 29-28] Unisim Transformation completed in 2 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2380.824 ; gain = 0.000 ; free physical = 5499 ; free virtual = 27357
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2380.828 ; gain = 0.000 ; free physical = 7864 ; free virtual = 29511
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
@@ -273,10 +272,10 @@ Synth Design complete | Checksum: 89ca918
 INFO: [Common 17-83] Releasing license: Synthesis
 39 Infos, 6 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:09:04 ; elapsed = 00:08:33 . Memory (MB): peak = 2380.824 ; gain = 1012.754 ; free physical = 5501 ; free virtual = 27359
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1735.557; main = 1522.695; forked = 304.088
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3242.914; main = 2380.828; forked = 982.270
-Write ShapeDB Complete: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2404.836 ; gain = 0.000 ; free physical = 5501 ; free virtual = 27359
+synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:25 . Memory (MB): peak = 2380.828 ; gain = 911.285 ; free physical = 7864 ; free virtual = 29511
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1530.685; main = 1530.685; forked = 262.021
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3045.055; main = 2380.832; forked = 918.113
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2404.840 ; gain = 0.000 ; free physical = 7864 ; free virtual = 29511
 INFO: [Common 17-1381] The checkpoint '/home/mike/Desktop/work/fpga_u2_stopwatch/4_vivado/fpga_u2_stopwatch/fpga_u2_stopwatch.runs/synth_1/stop_watch.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file stop_watch_utilization_synth.rpt -pb stop_watch_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Oct  2 12:37:48 2025...
+INFO: [Common 17-206] Exiting Vivado at Thu Oct  2 17:08:33 2025...
