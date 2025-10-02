@@ -71,6 +71,10 @@ U3: entity work.control
             );
             
 U4: entity work.count_show_display
+
+    generic map (   g_sim   => g_sim
+                )
+                
     port map (  clk             => clk,
                 reset_n         => reset_n,
                 run             => run,

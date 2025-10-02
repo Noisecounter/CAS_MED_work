@@ -6,7 +6,8 @@ library ieee;
     
 entity count_show_display is
     generic (
-            g_high : natural := c_num_digits
+            g_high  : natural := c_num_digits;
+            g_sim   : boolean := false
             );
 
     port (
@@ -29,11 +30,16 @@ signal carry_out    : std_ulogic;           -- carry_out from count1digit
 signal enable_1     : std_ulogic;           -- carry over to the next digit
 signal enable_2     : std_ulogic;           -- carry over to the next digit
 signal enable_3     : std_ulogic;           -- carry over to the next digit
-       
+
+constant c_max_values : digit_array_t := f_select2(g_sim, c_max_value_sim, c_max_value_syn);       
 
 begin
 
 U1: entity work.count1digit
+
+    generic map ( g_high => c_max_values(3)
+                )
+                
     port map (  clk             => clk,
                 reset_n         => reset_n,
                 enable          => enable_0,
@@ -45,6 +51,10 @@ U1: entity work.count1digit
             );
             
 U2: entity work.count1digit
+
+    generic map ( g_high => c_max_values(2)
+                )
+                
     port map (  clk             => clk,
                 reset_n         => reset_n,
                 enable          => enable_1,
@@ -56,6 +66,10 @@ U2: entity work.count1digit
             );
             
 U3: entity work.count1digit
+
+    generic map ( g_high => c_max_values(1)
+                )
+                
     port map (  clk             => clk,
                 reset_n         => reset_n,
                 enable          => enable_2,
@@ -67,6 +81,10 @@ U3: entity work.count1digit
             );
             
 U4: entity work.count1digit
+
+    generic map ( g_high => c_max_values(0)
+                )
+                
     port map (  clk             => clk,
                 reset_n         => reset_n,
                 enable          => enable_3,

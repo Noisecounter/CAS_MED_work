@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
-| Date         : Thu Oct  2 07:13:31 2025
+| Date         : Thu Oct  2 12:44:29 2025
 | Host         : mike-NH5xAx running 64-bit Ubuntu 24.04.2 LTS
 | Command      : report_control_sets -verbose -file stop_watch_control_sets_placed.rpt
 | Design       : stop_watch
@@ -58,10 +58,10 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |               7 |            4 |
+| No           | No                    | No                     |               7 |            6 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              60 |           17 |
-| Yes          | No                    | No                     |              16 |            3 |
+| No           | Yes                   | No                     |              60 |           15 |
+| Yes          | No                    | No                     |              16 |            4 |
 | Yes          | No                    | Yes                    |               0 |            0 |
 | Yes          | Yes                   | No                     |              28 |            7 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
@@ -73,16 +73,16 @@ Table of Contents
 +----------------+-----------------+----------------------+------------------+----------------+--------------+
 |  Clock Signal  |  Enable Signal  |   Set/Reset Signal   | Slice Load Count | Bel Load Count | Bels / Slice |
 +----------------+-----------------+----------------------+------------------+----------------+--------------+
+|  clk_IBUF_BUFG | U1/p1khz_1      | U2/reset_n           |                1 |              4 |         4.00 |
 |  clk_IBUF_BUFG | U3/run_reg_3[0] | U3/init_reg_0[0]     |                1 |              4 |         4.00 |
 |  clk_IBUF_BUFG | U3/run_reg_2[0] | U3/init_reg_0[0]     |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG | U3/run_reg_1[0] | U3/init_reg_0[0]     |                2 |              4 |         2.00 |
+|  clk_IBUF_BUFG | U3/run_reg_1[0] | U3/init_reg_0[0]     |                1 |              4 |         4.00 |
 |  clk_IBUF_BUFG | U3/run_reg_0[0] | U3/init_reg_0[0]     |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG | U1/p1khz_1      | U2/reset_n           |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG |                 |                      |                4 |              7 |         1.75 |
-|  clk_IBUF_BUFG | U1/p1khz        | U2/reset_n           |                1 |              8 |         8.00 |
-|  clk_IBUF_BUFG | U3/E[0]         |                      |                3 |             16 |         5.33 |
+|  clk_IBUF_BUFG |                 |                      |                6 |              7 |         1.17 |
+|  clk_IBUF_BUFG | U1/p1khz        | U2/reset_n           |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG | U3/E[0]         |                      |                4 |             16 |         4.00 |
 |  clk_IBUF_BUFG |                 | U1/count1[0]_i_1_n_0 |                5 |             17 |         3.40 |
-|  clk_IBUF_BUFG |                 | U2/reset_n           |               12 |             43 |         3.58 |
+|  clk_IBUF_BUFG |                 | U2/reset_n           |               10 |             43 |         4.30 |
 +----------------+-----------------+----------------------+------------------+----------------+--------------+
 
 
