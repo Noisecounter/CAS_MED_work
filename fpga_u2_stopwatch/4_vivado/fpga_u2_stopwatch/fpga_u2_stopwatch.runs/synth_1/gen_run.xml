@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1759417682" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/stop_watch.dcp">
-  <File Type="VDS-TIMINGSUMMARY" Name="stop_watch_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="stop_watch.dcp"/>
-  <File Type="RDS-UTIL-PB" Name="stop_watch_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="stop_watch_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="stop_watch_drc_synth.rpt"/>
   <File Type="RDS-RDS" Name="stop_watch.vds"/>
   <File Type="REPORTS-TCL" Name="stop_watch_reports.tcl"/>
-  <File Type="VDS-TIMING-PB" Name="stop_watch_timing_summary_synth.pb"/>
   <File Type="PA-TCL" Name="stop_watch.tcl"/>
+  <File Type="RDS-UTIL" Name="stop_watch_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="stop_watch_utilization_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/../../2_hdl/stop_watch_lib/src/condition.vhd">
