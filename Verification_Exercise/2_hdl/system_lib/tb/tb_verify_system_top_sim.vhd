@@ -41,6 +41,7 @@ end tb_verify_system_top;
 architecture sim of tb_verify_system_top is
 
 constant c_end_sim  : integer  := 50000;
+signal p_stim_done : std_logic := '0';
     
 begin
 
@@ -76,8 +77,11 @@ begin
     
     begin
     
-    if rising_edge (clk_40) then
-        if locked = '1' then
+    wait until locked = '1';
+    
+    while counter <= 3 loop
+        wait until rising_edge (clk_40);
+        
             case counter is
                 when 0 =>
                     data_en <= '0';
@@ -105,48 +109,49 @@ begin
                     data3 <= x"00";
             end case;
             counter := + 1;
-        end if;
-    end if;
+     
+    end loop;
    
+    p_stim_done <= '1';
     report "Process p_wirite finished";
     wait;
+    
     end process p_stim;
     
     p_read : process
-        
+    
     begin
     
-    if rising_edge (clk_40) then
-        if locked = '1' then
-            case counter is
-                when 0 =>
-                    data_en <= '0';
-                    data0 <= x"00";
-                    data1 <= x"00";
-                    data2 <= x"00";
-                    data3 <= x"00";
-                when 1 =>
-                    data_en <= '1';
-                    data0 <= x"07";
-                    data1 <= x"01";
-                    data2 <= x"09";
-                    data3 <= x"01";
-                when 2 =>
-                    data_en <= '1';
-                    data0 <= x"07";
-                    data1 <= x"02";
-                    data2 <= x"09";
-                    data3 <= x"02";
-                when 3 =>
-                    data_en <= '0';
-                    data0 <= x"07";
-                    data1 <= x"00";
-                    data2 <= x"09";
-                    data3 <= x"00";
-            end case;
+    wait until locked = '1';
+    wait until p_stim_done = '1';
+    wait until rising_edge (clk_40);
+        
+   -- Adresse setzen und rdata prüfen
+        raddr <= "0000000000";                  --entspricht raddr 0
+        assert rdata = x"07010007";
+            report "raddr 0 stimmt nicht mit expected rdata überrein"
+            severity error;
+            
+        raddr <= "0000000001";                  --entspricht raddr 1
+        assert rdata = x"09010009";
+            report "raddr 1 stimmt nicht mit expected rdata überrein"
+            severity error;
+        
+        raddr <= "0000000010";                  --entspricht raddr 2
+        assert rdata = x"00702000E";
+            report "raddr 2 stimmt nicht mit expected rdata überrein"
+            severity error;
+            
+        raddr <= "0000000011";                  --entspricht raddr 3
+        assert rdata = x"09020012";
+            report "raddr 3 stimmt nicht mit expected rdata überrein"
+            severity error;
+            
+        raddr <= "0000001000";                  --entspricht raddr 8
+        assert rdata = x"00000000";
+            report "raddr 8 stimmt nicht mit expected rdata überrein"
+            severity error;
 
-        end if;
-    end if;
    
     report "Process p_read finished";
     wait;
