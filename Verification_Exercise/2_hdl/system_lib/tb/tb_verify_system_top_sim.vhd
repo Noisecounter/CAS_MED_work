@@ -16,11 +16,17 @@ use ieee.std_logic_textio.all;
 library system_tb_lib;
 use system_tb_lib.system_top_pkg.all;
 
+
 library std;
 use std.TEXTIO.all;
 
 entity tb_verify_system_top is
-
+    
+    generic (
+         C_DWIDTH   : natural := 8;
+         C_AWIDTH   : natural := 10 
+         );
+         
     port(
         clk_40  : in  std_ulogic;
         clk_80  : in  std_ulogic;
@@ -52,17 +58,17 @@ begin
     begin
 -- Reset Sequenz    
         rst <= '1';
-        wait for 20ns;
+        wait for 20 ns;
         rst <= '0';
-        wait for 5ns;
+        wait for 5 ns;
 -- Start der Wiederholungssequenz
     while counter < c_end_sim loop
         clk_50 <= '0';
-        WAIT FOR 5ns ;
+        WAIT FOR 5 ns ;
         clk_50 <= '1';
-        WAIT FOR 10ns; 
+        WAIT FOR 10 ns; 
         clk_50 <= '0';
-        WAIT FOR 5ns ;
+        WAIT FOR 5 ns ;
         counter := counter + 1;
     end loop;
         clk_50 <= '0';
@@ -107,13 +113,14 @@ begin
                     data1 <= x"00";
                     data2 <= x"09";
                     data3 <= x"00";
+                when others => null;
             end case;
             counter := + 1;
      
     end loop;
    
     p_stim_done <= '1';
-    report "Process p_wirite finished";
+    report "Process p_write finished";
     wait;
     
     end process p_stim;

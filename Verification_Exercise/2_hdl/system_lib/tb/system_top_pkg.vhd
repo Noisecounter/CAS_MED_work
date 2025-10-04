@@ -18,7 +18,8 @@ package system_top_pkg is
     -- -------------------------------------------------------
     -- Global Constants & Types
     -- -------------------------------------------------------
-
+    constant C_DWIDTH   : integer := 8;
+    constant C_AWIDTH   : natural := 10;
     -- -------------------------------------------------------
     -- Procedure to read data from a memory
     -- -------------------------------------------------------

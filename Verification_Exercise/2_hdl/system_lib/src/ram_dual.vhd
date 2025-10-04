@@ -41,8 +41,10 @@ architecture rtl of ram_dual is
 
   -- Declare the RAM signal.
   signal ram     : t_ram;
-  signal waddr_i : natural range 0 to G_AWIDTH**2-1;
-  signal raddr_i : natural range 0 to G_AWIDTH**2-1;
+--  signal waddr_i : natural range 0 to G_AWIDTH**2-1;
+--  signal raddr_i : natural range 0 to G_AWIDTH**2-1;
+signal waddr_i : natural range 0 to 2 ** G_AWIDTH - 1;
+signal raddr_i : natural range 0 to 2 ** G_AWIDTH - 1;
   
 begin
 
