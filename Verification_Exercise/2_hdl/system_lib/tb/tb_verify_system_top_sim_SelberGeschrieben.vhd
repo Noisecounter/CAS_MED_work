@@ -22,10 +22,10 @@ use std.TEXTIO.all;
 
 entity tb_verify_system_top is
     
---    generic (
---         C_DWIDTH   : natural := 8;
---         C_AWIDTH   : natural := 10 
---         );
+    generic (
+         C_DWIDTH   : natural := 8;
+         C_AWIDTH   : natural := 10 
+         );
          
     port(
         clk_40  : in  std_ulogic;
@@ -46,57 +46,19 @@ end tb_verify_system_top;
 
 architecture sim of tb_verify_system_top is
 
-    -- Record für lese / schreibe Port
-    signal in_port  : t_in_port;
-    signal rd_port  : t_rd_port;
+constant c_end_sim  : integer  := 50000;
+signal p_stim_done : std_logic := '0';
     
-    -- Kontrollsignale
-    signal stim_done    : boolean := false;
-    signal rd_done      : boolean := false;
- 
 begin
 
-    -- Verbindungen zwischen ports und records
-    
-    -- für in_port
-    data_en <= in_port.data_en;
-    data0   <= in_port.data0;
-    data1   <= in_port.data1;
-    data2   <= in_port.data2;
-    data3   <= in_port.data3;
-    
-    -- für rd_port
-    raddr           <= rd_port.raddr;
-    rd_port.rdata   <= rdata;
-    rd_port.clk     <= clk_40
-    
-    -- -------------------------------------------------------
-    -- Stimuli for clock and reset
-    -- -------------------------------------------------------
     p_clk_and_rst : process
 
---    variable counter : integer := 0;
+    variable counter : integer := 0;
+
     begin
-        -- Reset Sequenz    
-        rst <= transport '1', '0' after 10 *c_cycle;
-        
-        -- Clock Erzeugung
-        while (not rd_done) loop
-            clk_50 <= '1' after c_cycle/2,
-                '0' after c_cycle;
-            wait for c_cycle;
-        end loop;
-        
-        -- Prozess beenden
-        report "Clock & Reset Prozess beendet";
-        wait for 200 ns;
-        wait;
-    end process p_clk_and_rst;
-    
-        
-        
-        
-        
+-- Reset Sequenz    
+        rst <= '1';
+        wait for 20 ns;
         rst <= '0';
         wait for 5 ns;
 -- Start der Wiederholungssequenz
