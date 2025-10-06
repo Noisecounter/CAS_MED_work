@@ -46,7 +46,7 @@ end tb_verify_system_top;
 
 architecture sim of tb_verify_system_top is
 
-    -- Record für lese / schreibe Port
+    -- Record fuer lese / schreibe Port
     signal in_port  : t_in_port;
     signal rd_port  : t_rd_port;
     
@@ -58,17 +58,17 @@ begin
 
     -- Verbindungen zwischen ports und records
     
-    -- für in_port
+    -- fuer in_port
     data_en <= in_port.data_en;
     data0   <= in_port.data0;
     data1   <= in_port.data1;
     data2   <= in_port.data2;
     data3   <= in_port.data3;
     
-    -- für rd_port
+    -- fuer rd_port
     raddr           <= rd_port.raddr;
     rd_port.rdata   <= rdata;
-    rd_port.clk     <= clk_40
+    rd_port.clk     <= clk_40;
     
     -- -------------------------------------------------------
     -- Stimuli for clock and reset
@@ -93,113 +93,79 @@ begin
         wait;
     end process p_clk_and_rst;
     
-        
-        
-        
-        
-        rst <= '0';
-        wait for 5 ns;
--- Start der Wiederholungssequenz
-    while counter < c_end_sim loop
-        clk_50 <= '0';
-        WAIT FOR 5 ns ;
-        clk_50 <= '1';
-        WAIT FOR 10 ns; 
-        clk_50 <= '0';
-        WAIT FOR 5 ns ;
-        counter := counter + 1;
-    end loop;
-        clk_50 <= '0';
-        report "End of Simulation";
-        wait;
--- Ende der Wiederholungssequenz
-    end process p_clk_and_rst; 
-    
+    -- -------------------------------------------------------
+    -- Stimulate inputs
+    -- -------------------------------------------------------
     p_stim : process
-        
-    variable counter : integer := 0;
-    
+        file f_stim             : text open read_mode is c_stim;
+        variable l_stim         : line;
+        variable v_in_port      : t_in_port;
+        variable v_count_old    : natural;
     begin
-    
-    wait until locked = '1';
-    
-    while counter <= 3 loop
-        wait until rising_edge (clk_40);
-        
-            case counter is
-                when 0 =>
-                    data_en <= '0';
-                    data0 <= x"00";
-                    data1 <= x"00";
-                    data2 <= x"00";
-                    data3 <= x"00";
-                when 1 =>
-                    data_en <= '1';
-                    data0 <= x"07";
-                    data1 <= x"01";
-                    data2 <= x"09";
-                    data3 <= x"01";
-                when 2 =>
-                    data_en <= '1';
-                    data0 <= x"07";
-                    data1 <= x"02";
-                    data2 <= x"09";
-                    data3 <= x"02";
-                when 3 =>
-                    data_en <= '0';
-                    data0 <= x"07";
-                    data1 <= x"00";
-                    data2 <= x"09";
-                    data3 <= x"00";
-                when others => null;
-            end case;
-            counter := + 1;
-     
+    -- Initialisierung
+    in_port <= (0, '0', (others => '0'), (others => '0'), (others => '0'), (others => '0'));
+    wait until locked = '1';        -- warte bis PLL locked
+    wait until rising_edge (clk_40);-- synchronisiere auf 40 MHz Clock
+    wait for c_delay;               -- Stimuliere Inputs nach rising edge (propagation delay aus system_top_pkg)
+    -- Stimuliere Inhalt aus Datei f_stim
+    while not endfile(f_stim) loop
+        v_count_old := v_in_port.count;
+        readline (f_stim, l_stim);
+        read (l_stim, v_in_port.count);
+        read (l_stim, v_in_port.data_en);
+        hread (l_stim, v_in_port.data0);
+        hread (l_stim, v_in_port.data1);
+        hread (l_stim, v_in_port.data2);
+        hread (l_stim, v_in_port.data3);
+        wait for (v_in_port.count - v_count_old) * c_cycle_40;
+        in_port <= v_in_port;  -- Variable "v_in_port" wird auf Signal in_port geschrieben 
     end loop;
-   
-    p_stim_done <= '1';
-    report "Process p_write finished";
+    file_close(f_stim);
+
+    -- beende Prozess
+    report "Stimuli Prozess beendet";
+    stim_done <= true;
     wait;
-    
     end process p_stim;
     
+    -- -------------------------------------------------------
+    -- Read from memory
+    -- ------------------------------------------------------- 
     p_read : process
-    
+        file f_exp          : text open read_mode is c_exp;
+        file f_dump         : text open WRITE_MODE is c_dump;
+        constant c_header   : STRING := " Sim-Time Addr Expected Actual";
+        variable l_read     : LINE;
+        variable l_result   : LINE;
+        variable addr       : STD_ULOGIC_VECTOR (9 downto 0);
+        variable exp_data   : STD_ULOGIC_VECTOR (31 downto 0);
     begin
+        -- Initialisierung
+        -- rd_port <= ('Z', (others => '0'), (others => 'Z'));
+        --write (l_result, string'("  Sim-Time   Addr  Expected    Actual"));
+        WRITE (l_result, c_header);
+        WRITELINE (f_dump, l_result);
+
+        wait until stim_done = TRUE;            -- Warte bis Schreiben beendet
+        wait until rising_edge(rd_port.clk);    -- Sync auf clock_40
+
+        -- Lese Speicher und vergleiche mit erwarteten Werten
+        while not ENDFILE(f_exp) loop
+            READLINE (f_exp, l_read);
+            HREAD (l_read, addr);
+            HREAD (l_read, exp_data);
+            rd_mem (rd_port, addr,exp_data,l_result);
+            -- Schreibe result-Puffer in Datei
+            WRITELINE (f_dump, l_result);
+        end loop;
+        FILE_CLOSE(f_exp);
+        FILE_CLOSE(f_dump);
+
+        -- Beende Prozess
+        report "Lese Prozess beendet";
+        rd_done <= TRUE;
+        wait;
+        
+    end process p_read;
     
-    wait until locked = '1';
-    wait until p_stim_done = '1';
-    wait until rising_edge (clk_40);
-        
-   -- Adresse setzen und rdata prüfen
-        raddr <= "0000000000";                  --entspricht raddr 0
-        assert rdata = x"07010007";
-            report "raddr 0 stimmt nicht mit expected rdata überrein"
-            severity error;
-            
-        raddr <= "0000000001";                  --entspricht raddr 1
-        assert rdata = x"09010009";
-            report "raddr 1 stimmt nicht mit expected rdata überrein"
-            severity error;
-        
-        raddr <= "0000000010";                  --entspricht raddr 2
-        assert rdata = x"00702000E";
-            report "raddr 2 stimmt nicht mit expected rdata überrein"
-            severity error;
-            
-        raddr <= "0000000011";                  --entspricht raddr 3
-        assert rdata = x"09020012";
-            report "raddr 3 stimmt nicht mit expected rdata überrein"
-            severity error;
-            
-        raddr <= "0000001000";                  --entspricht raddr 8
-        assert rdata = x"00000000";
-            report "raddr 8 stimmt nicht mit expected rdata überrein"
-            severity error;
-
-   
-    report "Process p_read finished";
-    wait;
-    end process p_read;    
-
 end architecture sim;
