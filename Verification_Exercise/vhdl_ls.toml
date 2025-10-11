@@ -1,0 +1,18 @@
+[libraries]
+
+system_lib = { path = "/home/mike/Desktop/work/Verification_Exercise/5_vscode/GHDL/system_lib", files = [
+  "2_hdl/system_lib/src/ime_reset.vhd",
+  "2_hdl/system_lib/src/my_pll.vhd",
+  "2_hdl/system_lib/src/ram_dual.vhd",
+  "2_hdl/system_lib/src/data_calc_rtl.vhd",
+  "2_hdl/system_lib/src/data_calc_rtl2.vhd",
+  "2_hdl/system_lib/src/data_sync_rtl.vhd",
+  "2_hdl/system_lib/src/system_top_struct.vhd",
+  "2_hdl/system_lib/src/de1_soc_top_struct.vhd"
+]}
+
+system_tb_lib = { path = "/home/mike/Desktop/work/Verification_Exercise/5_vscode/GHDL/system_tb_lib", files = [
+  "2_hdl/system_lib/tb/system_top_pkg.vhd",
+  "2_hdl/system_lib/tb/tb_system_top_struct.vhd",
+  "2_hdl/system_lib/tb/tb_verify_system_top_sim.vhd"
+]}

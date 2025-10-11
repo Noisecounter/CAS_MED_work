@@ -94,3 +94,10 @@ vsim.dbg
 !*.xmp
 
 # End of https://www.toptal.com/developers/gitignore/api/vivado,modelsim
+
+###########################################################################
+##	Sonstiges
+
+!*.json
+!*.toml
+!*.cf

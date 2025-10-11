@@ -1,0 +1,44 @@
+{
+    "sim_tool": "ghdl",
+    "top_module": "tb_system_top_struct",
+    "analyze_options": ["-fsynopsys"],
+    "files": [
+        {
+            "path": "2_hdl/system_lib/tb/tb_system_top_struct.vhd",
+            "is_top": true
+        },
+        {
+            "path": "2_hdl/system_lib/tb/tb_verify_system_top_sim.vhd"
+        },
+        {
+            "path": "2_hdl/system_lib/tb/system_top_pkg.vhd"
+        },
+        {
+            "path": "2_hdl/system_lib/tb/system_top_pkg.vhd"
+        },
+        {
+            "path": "2_hdl/system_lib/tb/tb_verify_system_top_sim.vhd"
+        },
+        {
+            "path": "2_hdl/system_lib/src/data_calc_rtl2.vhd"
+        },
+        {   
+            "path": "2_hdl/system_lib/src/data_sync_rtl.vhd"
+        },
+         {
+            "path": "2_hdl/system_lib/src/system_top_struct.vhd"
+        },
+        {   
+            "path": "2_hdl/system_lib/src/ime_reset.vhd"
+        },
+        {   
+            "path": "2_hdl/system_lib/src/my_pll.vhd"
+        },
+         {
+            "path": "2_hdl/system_lib/src/de1_soc_top_struct.vhd"
+        },
+        {   
+            "path": "2_hdl/system_lib/src/ram_dual.vhd"
+        },
+
+}

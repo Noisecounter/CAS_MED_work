@@ -1,0 +1,7 @@
+{
+  "vhdl.workspace.library": {
+    "system_lib": "/home/mike/Desktop/work/Verification_Exercise/5_vscode/GHDL/system_lib",
+    "system_tb_lib": "/home/mike/Desktop/work/Verification_Exercise/5_vscode/GHDL/system_tb_lib"
+  },
+  "vhdl-by-hgb.vhdlls.toml.generation": "manual"
+}
