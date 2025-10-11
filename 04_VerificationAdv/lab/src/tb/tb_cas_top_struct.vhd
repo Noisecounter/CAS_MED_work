@@ -74,7 +74,7 @@ architecture struct of tb_cas_top is
   end component tb_ctrl;
 
   -- optional embedded configurations
-  for all : tb_ctrl use entity work.tb_ctrl(tc_0002);
+  for all : tb_ctrl use entity work.tb_ctrl(tc_0003);
   
 begin
 
