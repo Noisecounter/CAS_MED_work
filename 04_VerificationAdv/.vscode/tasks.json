@@ -1,0 +1,167 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Create GHDL Library Dirs",
+      "type": "shell",
+      "command": "mkdir",
+      "args": [
+        "-p",
+        "/home/mike/Desktop/work/04_VerificationAdv/.vscode/work",
+        "/home/mike/Desktop/work/04_VerificationAdv/.vscode/work/osvvm"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "GHDL Analyse OSVVM",
+      "type": "shell",
+      "command": "ghdl",
+      "args": [
+        "-a",
+        "--work=osvvm",
+        "--workdir=${workspaceFolder}/.vscode/work/osvvm",
+        "-fexplicit",
+        "--std=08",
+
+        "lab/osvvm_src/TranscriptPkg.vhd",
+        "lab/osvvm_src/TextUtilPkg.vhd",
+        "lab/osvvm_src/NamePkg.vhd",
+        "lab/osvvm_src/OsvvmGlobalPkg.vhd",
+        "lab/osvvm_src/AlertLogPkg.vhd",
+        "lab/osvvm_src/MessagePkg.vhd",
+        "lab/osvvm_src/TbUtilPkg.vhd",
+        "lab/osvvm_src/SortListPkg_int.vhd",
+        "lab/osvvm_src/RandomBasePkg.vhd",
+        "lab/osvvm_src/RandomPkg.vhd",
+        "lab/osvvm_src/ScoreboardGenericPkg.vhd",
+        "lab/osvvm_src/ScoreboardPkg_int.vhd",
+        "lab/osvvm_src/ScoreboardPkg_slv.vhd",
+        "lab/osvvm_src/MemoryPkg.vhd",
+        "lab/osvvm_src/VendorCovApiPkg.vhd",    
+        "lab/osvvm_src/CoveragePkg.vhd",       
+        "lab/osvvm_src/ResolutionPkg.vhd",
+                        "lab/osvvm_src/OsvvmContext.vhd"
+
+      ],
+      "dependsOn": ["Create GHDL Library Dirs"],
+      "group": "build",
+      "problemMatcher": []
+    },
+      {
+      "label": "GHDL Analyse Packages",
+      "type": "process",
+      "command": "ghdl",
+      "args": [
+        "-a",
+        "--work=work",
+      
+        "--workdir=${workspaceFolder}/.vscode/work",
+        "-fexplicit",
+        "--std=08",
+        "-P/home/mike/Desktop/work/04_VerificationAdv/.vscode/work/osvvm",
+        
+        "lab/src/duv/cas_func_pkg.vhd",
+        "lab/src/duv/cas_pkg.vhd",
+        "lab/src/tb/tb_cas_pkg.vhd"
+
+      ],
+      "dependsOn": ["Create GHDL Library Dirs", "GHDL Analyse OSVVM"],
+      "group": "build",
+      "problemMatcher": []
+    },
+      {
+      "label": "GHDL Analyse DUT Entities",
+      "type": "shell",
+      "command": "ghdl",
+      "args": [
+        "-a",
+        "--work=work",
+        "--workdir=/home/mike/Desktop/work/04_VerificationAdv/.vscode/work",
+       
+        "-fexplicit",
+        "--std=08",
+        "-P/home/mike/Desktop/work/04_VerificationAdv/.vscode/work/osvvm",
+    "lab/src/tb/tb_ctrl_entity.vhd",
+    "lab/solutions/tb_ctrl_tc_0001.vhd",
+    "lab/solutions/tb_ctrl_tc_0002.vhd",
+    "lab/solutions/tb_ctrl_tc_0003.vhd",
+    "lab/src/tb/tb_ctrl_tc_0001.vhd",
+    "lab/src/tb/tb_ctrl_tc_0002.vhd",
+    "lab/src/tb/tb_ctrl_tc_0003.vhd",
+    "lab/src/tb/model_spi_sim.vhd",
+    "lab/src/tb/tb_cas_top_struct.vhd",
+    "lab/src/tb/clk_rst_sim.vhd"
+      ],
+      "dependsOn": ["Create GHDL Library Dirs", "GHDL Analyse OSVVM"],
+      "group": "build",
+      "problemMatcher": []
+    },
+      {
+      "label": "GHDL Analyse Testbench",
+      "type": "shell",
+      "command": "ghdl",
+      "args": [
+        "-a",
+        "--work=work",
+        "--workdir=/home/mike/Desktop/work/04_VerificationAdv/.vscode/work",
+       
+        "-fexplicit",
+        "--std=08",
+        "-P/home/mike/Desktop/work/04_VerificationAdv/.vscode/work/osvvm",
+
+        "lab/src/duv/cas_func_pkg.vhd",
+        "lab/src/duv/cas_pkg.vhd",
+        "lab/src/tb/tb_cas_pkg.vhd"
+      ],
+      "dependsOn": ["Create GHDL Library Dirs", "GHDL Analyse OSVVM"],
+      "group": "build",
+      "problemMatcher": []
+    },
+
+    {
+      "label": "GHDL Elaborate",
+      "type": "shell",
+      "command": "ghdl",
+      "args": [
+        "-e",
+        "--std=08",
+        "--workdir=/home/mike/Desktop/work/04_VerificationAdv/.vscode/work",
+        "--work=defaultlib",
+        "tb_cas_top_struct"
+      ],
+      "dependsOn": ["Create GHDL Library Dirs", "GHDL Analyse OSVVM"],
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "GHDL Simulate",
+      "type": "shell",
+      "command": "ghdl",
+      "args": [
+        "-r",
+        "--std=08",
+        "--workdir=/home/mike/Desktop/work/04_VerificationAdv/.vscode/work",
+        "--work=defaultlib",
+        "tb_cas_top_struct",
+        "--stop-time=1000ns",
+        "--wave=sim.ghw"
+      ],
+      "dependsOn": ["GHDL Elaborate"],
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "GHDL Run All",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "GHDL Analyse work",
+        "GHDL Elaborate",
+        "GHDL Simulate"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}
