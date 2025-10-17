@@ -1,0 +1,12 @@
+# VUnit
+sim/vunit_out
+
+# Modelsim transcript files
+*.transcript
+
+# Cosim data
+bittrue/cosim/*/data
+
+# Pycharm project files
+**/.idea
+*.pyc
